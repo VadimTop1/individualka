@@ -19,7 +19,7 @@ if ($pgsql_conn) {
     $query = "show databases like 'customers' ";
     $table=pg_query($pgsql_conn, $strTable);
     $result = pg_query($query) or die("Нету таблицы");//die('Ошибка запроса: ' . pg_last_error());
-    //echo $result;
+    ///echo $result;
     ///if($result != null)
     //    echo "Таблица существует";
     //else
