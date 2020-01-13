@@ -17,14 +17,15 @@ CREATE TABLE customers
 if ($pgsql_conn) {
     echo "Успешно подключились к : " . pg_host($pgsql_conn) . "<br/>\n";
     $query = "show databases like 'customers' ";
+    $table=pg_query($pgsql_conn, $strTable);
     $result = pg_query($query) or die("Нету таблицы");//die('Ошибка запроса: ' . pg_last_error());
-    echo $result;
-    if($result != null)
-        echo "Таблица существует";
-    else
-    {
-        //echo "Нету таблицы";
-        $table=pg_query($pgsql_conn, $strTable);
+    //echo $result;
+    ///if($result != null)
+    //    echo "Таблица существует";
+    //else
+    //{
+    //    //echo "Нету таблицы";
+     //   $table=pg_query($pgsql_conn, $strTable);
     //pg_close($dbconn);
     }
     
