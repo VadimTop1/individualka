@@ -18,6 +18,7 @@ if ($pgsql_conn) {
     echo "Успешно подключились к : " . pg_host($pgsql_conn) . "<br/>\n";
     $query = "show databases like 'db_name' ";
     $result = pg_query($query) or die("Нету таблицы");//die('Ошибка запроса: ' . pg_last_error());
+    echo $result;
     if($result != null)
         echo "Таблица существует";
     else
