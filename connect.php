@@ -4,15 +4,7 @@ $pgsql_conn = pg_connect("host=ec2-174-129-33-107.compute-1.amazonaws.com dbname
     or die('Не удалось соединиться: ' . pg_last_error());
 
 $table;
-$strTable = "
-CREATE TABLE customers
-(
-    Id SERIAL PRIMARY KEY,
-    FirstName CHARACTER VARYING(30),
-    LastName CHARACTER VARYING(30),
-    Email CHARACTER VARYING(30),
-    Age INTEGER
-);";
+$strTable = "CREATE TABLE customers(Id SERIAL PRIMARY KEY,FirstName CHARACTER VARYING(30),LastName CHARACTER VARYING(30),Email CHARACTER VARYING(30),Age INTEGER);";
 
 if ($pgsql_conn) {
     echo "Успешно подключились к : " . pg_host($pgsql_conn) . "<br/>\n";
