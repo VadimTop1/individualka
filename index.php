@@ -1,7 +1,9 @@
 <?php
 include 'connect.php';
 
-$result=pg_query($connection,"INSERT INTO customers (FirstName ,LastName ,Email ,Age  ) VALUES ('Дима','Монитор', 'dim@mail.ru', 21);");
+$query = "INSERT INTO customers (FirstName ,LastName ,Email ,Age  ) VALUES ('Дима','Монитор', 'dim@mail.ru', 21);";
+//$result=pg_query($connection,"INSERT INTO customers (FirstName ,LastName ,Email ,Age  ) VALUES ('Дима','Монитор', 'dim@mail.ru', 21);") or die('Ошибка запроса: ' . pg_last_error());
+$result = pg_query($query) or die('Ошибка запроса: ' . pg_last_error());
 // Выполнение SQL-запроса
 $query = 'SELECT * FROM customers';
 $result = pg_query($query) or die('Ошибка запроса: ' . pg_last_error());
