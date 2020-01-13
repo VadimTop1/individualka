@@ -27,7 +27,7 @@ if ($pgsql_conn) {
     //    //echo "Нету таблицы";
      //   $table=pg_query($pgsql_conn, $strTable);
     //pg_close($dbconn);
-    }
+    //}
     
 } else {
     echo "Bad connect :(";
