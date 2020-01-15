@@ -1,4 +1,5 @@
 <?php
+echo "Пишу: " + "->  <br/>";
 
 $pgsql_conn = pg_connect("host=ec2-174-129-33-107.compute-1.amazonaws.com dbname=d2vsnkphe5a3oj user=rtokoowoircggm password=7b7b20b8a7e3719a92a0f789626bfcd89b12e39de5e69bef5e706717a99eab24")
     or die('Не удалось соединиться: ' . pg_last_error());
