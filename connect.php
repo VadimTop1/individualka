@@ -11,7 +11,7 @@ if ($pgsql_conn) {
     echo "Успешно подключились к : " . pg_host($pgsql_conn) . "<br/>\n";
     $query = "show databases like 'customers' ";
     //DROP TABLE films
-    $query = "DROP TABLE films customers";
+    $query = "DROP TABLE customers;";
     $result=pg_query($pgsql_conn, $query);
 
     $query = "SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME='customers'";
