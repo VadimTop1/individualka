@@ -11,9 +11,9 @@ if ($pgsql_conn) {
     $query = "show databases like 'customers' ";
     $query = "SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME='customers'";
     $result=pg_query($pgsql_conn, $query);
-    echo "<br/>" + "-> ";
+    echo "Пишу: " + "-> ";
     //echo "<br/>" + $result;
-    
+
    // $query = 'DELETE FROM customers;';
    // $result = pg_query($query) or die('Ошибка запроса: ' . pg_last_error());
 
