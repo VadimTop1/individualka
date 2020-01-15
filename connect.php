@@ -14,7 +14,7 @@ if ($pgsql_conn) {
     $query = "DROP TABLE customers;";
     $result=pg_query($pgsql_conn, $query);
 
-    $query = "SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME='customersasd'";
+    $query = "SELECT count(*) from pg_tables where tablename='table1'";
     $result=pg_query($pgsql_conn, $query);
     echo "-> " . $result;
 
