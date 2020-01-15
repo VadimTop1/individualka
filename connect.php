@@ -14,7 +14,7 @@ if ($pgsql_conn) {
     $query = "DROP TABLE customers;";
     $result=pg_query($pgsql_conn, $query);
 
-    $query = "SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME='customers'";
+    $query = "SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME='customersasd'";
     $result=pg_query($pgsql_conn, $query);
     echo "-> " . $result;
 
