@@ -4,11 +4,11 @@ include 'connect.php';
 //$query = "INSERT INTO customers (FirstName ,LastName ,Email ,Age  ) VALUES ('Дима','Монитор', 'dim@mail.ru', 21);";
 //$result = pg_query($query) or die('Ошибка запроса: ' . pg_last_error());
 // Выполнение SQL-запроса
-$query = 'SELECT * FROM customers';
-$result = pg_query($query) or die('Ошибка запроса: ' . pg_last_error());
+//$query = 'SELECT * FROM customers';
+//$result = pg_query($query) or die('Ошибка запроса: ' . pg_last_error());
 
 // Вывод результатов в HTML
-echo "<table>\n";
+/*echo "<table>\n";
 while ($line = pg_fetch_array($result, null, PGSQL_ASSOC)) {
     echo "\t<tr>\n";
     foreach ($line as $col_value) {
@@ -22,7 +22,7 @@ echo "</table>\n";
 pg_free_result($result);
 
 //Закрытие соединения
-pg_close($dbconn);
+pg_close($dbconn);*/
 
 // Соединение, выбор базы данных
 //$pgsql_conn = pg_connect("host=ec2-174-129-33-107.compute-1.amazonaws.com dbname=d2vsnkphe5a3oj user=rtokoowoircggm password=7b7b20b8a7e3719a92a0f789626bfcd89b12e39de5e69bef5e706717a99eab24")

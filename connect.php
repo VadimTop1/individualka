@@ -12,10 +12,10 @@ if ($pgsql_conn) {
     $query = "SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME='customers'";
     $result=pg_query($pgsql_conn, $query);
     echo "<br/>" + "-> ";
-    echo "<br/>" + $result;
-    //DELETE FROM films;
-    $query = 'DELETE FROM customers;';
-    $result = pg_query($query) or die('Ошибка запроса: ' . pg_last_error());
+    //echo "<br/>" + $result;
+    
+   // $query = 'DELETE FROM customers;';
+   // $result = pg_query($query) or die('Ошибка запроса: ' . pg_last_error());
 
     //$result=pg_query($pgsql_conn, $strTable);
 
