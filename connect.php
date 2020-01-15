@@ -9,14 +9,26 @@ $table;
 
 if ($pgsql_conn) {
     echo "Успешно подключились к : " . pg_host($pgsql_conn) . "<br/>\n";
-    $query = "show databases like 'customers' ";
-    //DROP TABLE films
-    $query = "DROP TABLE customers;";
+    //Список пользователей:
+    //select * from pg_shadow;
+    $query = "SELECT * from pg_shadow";
     $result=pg_query($pgsql_conn, $query);
+    echo "<br/>-> " . $result;
+    //Список баз данных:
+    //select * from pg_database;
+    $query = "select * from pg_database";
+    $result=pg_query($pgsql_conn, $query);
+    echo "<br/>-> " . $result;
+    
 
-    $query = "SELECT count(*) from pg_tables where tablename='table1'";
-    $result=pg_query($pgsql_conn, $query);
-    echo "-> " . $result;
+    //$query = "show databases like 'customers' ";
+    //DROP TABLE films
+    //$query = "DROP TABLE customers;";
+    //$result=pg_query($pgsql_conn, $query);
+
+    //$query = "SELECT count(*) from pg_tables where tablename='table1'";
+    //$result=pg_query($pgsql_conn, $query);
+    //echo "-> " . $result;
 
    // $query = 'DELETE FROM customers;';
    // $result = pg_query($query) or die('Ошибка запроса: ' . pg_last_error());
