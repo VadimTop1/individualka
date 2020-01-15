@@ -11,12 +11,12 @@ if ($pgsql_conn) {
     echo "Успешно подключились к : " . pg_host($pgsql_conn) . "<br/>\n";
     //Список пользователей:
     //select * from pg_shadow;
-    $query = "SELECT * from pg_shadow";
-    $result=pg_query($pgsql_conn, $query);
-    echo "<br/>-> " . $result;
+    //$query = "SELECT * from pg_shadow";
+    //$result=pg_query($pgsql_conn, $query);
+    //echo "<br/>-> " . $result;
     //Список баз данных:
     //select * from pg_database;
-    $query = "select * from pg_database";
+    $query = "SELECT current_database(); ";
     $result=pg_query($pgsql_conn, $query);
     echo "<br/>-> " . $result;
     
