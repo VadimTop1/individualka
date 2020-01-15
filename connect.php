@@ -11,7 +11,7 @@ if ($pgsql_conn) {
     $query = "show databases like 'customers' ";
     $query = "SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME='customers'";
     $result=pg_query($pgsql_conn, $query);
-    echo "<\br> ->\t" + $result;
+    echo "<\br>" + "->  " + $result;
     //$result=pg_query($pgsql_conn, $strTable);
 
     //result = pg_query($query) or die("Нету таблицы");//die('Ошибка запроса: ' . pg_last_error());
