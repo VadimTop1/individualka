@@ -16,9 +16,9 @@ if ($pgsql_conn) {
     //echo "<br/>-> " . $result;
     //Список баз данных:
     //select * from pg_database;
-    $query = "SELECT current_database(); ";
-    $result=pg_query($pgsql_conn, $query);
-    echo "<br/>-> " . $result;
+    //$query = "SELECT current_database(); ";
+    //$result=pg_query($pgsql_conn, $query);
+    //echo "<br/>-> " . $result;
     
 
     //$query = "show databases like 'customers' ";
@@ -26,9 +26,9 @@ if ($pgsql_conn) {
     //$query = "DROP TABLE customers;";
     //$result=pg_query($pgsql_conn, $query);
 
-    //$query = "SELECT count(*) from pg_tables where tablename='table1'";
-    //$result=pg_query($pgsql_conn, $query);
-    //echo "-> " . $result;
+    $query = "SELECT count(*) from pg_tables where tablename='table1'";
+    $result=pg_query($pgsql_conn, $query);
+    echo "-> " . $result;
 
    // $query = 'DELETE FROM customers;';
    // $result = pg_query($query) or die('Ошибка запроса: ' . pg_last_error());

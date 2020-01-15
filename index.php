@@ -61,6 +61,6 @@ pg_close($dbconn);*/
 // Очистка результата
 //pg_free_result($result);
 
-// Закрытие соединения
-//pg_close($dbconn);
+//Закрытие соединения
+pg_close($dbconn);
 ?>
