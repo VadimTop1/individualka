@@ -1,5 +1,5 @@
 <?php
-echo "Пишу: " + "->  <br/>";
+echo "-> Индивидуальное задание" . "<br/>";
 
 $pgsql_conn = pg_connect("host=ec2-174-129-33-107.compute-1.amazonaws.com dbname=d2vsnkphe5a3oj user=rtokoowoircggm password=7b7b20b8a7e3719a92a0f789626bfcd89b12e39de5e69bef5e706717a99eab24")
     or die('Не удалось соединиться: ' . pg_last_error());
@@ -12,8 +12,7 @@ if ($pgsql_conn) {
     $query = "show databases like 'customers' ";
     $query = "SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME='customers'";
     $result=pg_query($pgsql_conn, $query);
-    echo "Пишу: " + "-> ";
-    //echo "<br/>" + $result;
+    echo "-> " . $result;
 
    // $query = 'DELETE FROM customers;';
    // $result = pg_query($query) or die('Ошибка запроса: ' . pg_last_error());
