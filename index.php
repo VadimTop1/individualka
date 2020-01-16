@@ -1,6 +1,6 @@
 <?php
 //Авто загрузка классов
-spl_autoload_register(
+/*spl_autoload_register(
     function (string $className)
     {
         //echo __DIR__ . '\\'. $className . '.php';
@@ -8,8 +8,9 @@ spl_autoload_register(
         var_dump(__DIR__ . '/src/' . $className . '.php');
         //require_once __DIR__ . '/src/' . $className . '.php';
     }
-);
-//require_once 'app/src/test1/test1.php';
+);*/
+require_once 'app/src/test1/test1.php';
+require_once 'app/src/test1/test2.php';
 //require_once "App/test2Fold/test1/test1.php";
 //require_once "App/test/test1/test1.php";
 
