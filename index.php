@@ -3,7 +3,7 @@
 spl_autoload_register(
     function (string $className)
     {
-        echo "src\\" . $className . '.php';
+        //echo "src\\" . $className . '.php';
         //echo "<br/><br/>".__DIR__ . "<br/>";
         //var_dump($className);
         require_once __DIR__ . $className . '.php';//__DIR__ . 
