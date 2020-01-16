@@ -9,7 +9,7 @@ spl_autoload_register(
         //require_once 'app/' . $className . '.php';
     }
 );
-require_once 'app\src/test1/test1.php';
+require_once 'app\src\test1\test1.php';
 //require_once "App/test2Fold/test1/test1.php";
 //require_once "App/test/test1/test1.php";
 
