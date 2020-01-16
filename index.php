@@ -25,7 +25,7 @@ spl_autoload_register(function ($name) {
     }
     echo "<br/> Хочу загрузить: ".$className."\n";
     require_once $className;
-    throw new Exception("Невозможно загрузить". $className);
+    throw new Exception("<br/>Невозможно загрузить: ". $className);
 });
 
 //require_once 'app/src/test1/test1.php';
@@ -50,8 +50,12 @@ try {
 echo "<br/>";
 echo "<br/>";
 
-$obj3 = new mainTest;
-echo $obj3->hello();
+try{
+    $obj3 = new mainTest;
+    echo $obj3->hello();
+} catch (Exception $e) {
+    echo $e->getMessage(), "\n";
+}
 
 echo "<br/>";
 echo "<br/>";
