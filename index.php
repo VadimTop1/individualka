@@ -10,12 +10,15 @@
     }
 );*/
 spl_autoload_register(function ($name) {
-    echo "Хочу загрузить".$name."\n";
-    throw new Exception("Невозможно загрузить". $name);
+    $className = 'app/'.$name;
+    echo "Хочу загрузить: ".$className."\n";
+
+    require_once $className;
+    throw new Exception("Невозможно загрузить". $className);
 });
 
-require_once 'app/src/test1/test1.php';
-require_once 'app/src/test2/test2.php';
+//require_once 'app/src/test1/test1.php';
+//require_once 'app/src/test2/test2.php';
 //require_once "App/test2Fold/test1/test1.php";
 //require_once "App/test/test1/test1.php";
 
@@ -35,6 +38,7 @@ echo "<br/>";
 
 try {
     $obj2 = new test2;
+    echo $obj2->hello();
 } catch (Exception $e) {
     echo $e->getMessage(), "\n";
 }
