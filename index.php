@@ -13,6 +13,7 @@ spl_autoload_register(function ($name) {
     $className = 'app\\'.$name.'.php';
 
     $namePath = explode("\\", $className);
+    echo $namePath[0];
     $className = $namePath[0];
     $i = 0;
     foreach($namePath as $value)
