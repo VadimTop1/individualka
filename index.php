@@ -23,13 +23,13 @@ use test\test1\test1 as mainTest;
 
 echo "Start3 <br/>  ----- <br/>";
 
-$obj = new MyClass;
-echo $obj->hello();
+$obj2 = new test1;
+echo $obj2->hello();
 
 echo "<br/>";
 
-$obj2 = new test1;
-echo $obj2->hello();
+$obj = new MyClass;
+echo $obj->hello();
 
 echo "<br/>";
 echo "<br/>";
