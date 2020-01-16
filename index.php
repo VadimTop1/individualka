@@ -9,6 +9,11 @@
         //require_once __DIR__ . '/src/' . $className . '.php';
     }
 );*/
+spl_autoload_register(function ($name) {
+    echo "Хочу загрузить $name.\n";
+    throw new Exception("Невозможно загрузить $name.");
+});
+
 require_once 'app/src/test1/test1.php';
 require_once 'app/src/test2/test2.php';
 //require_once "App/test2Fold/test1/test1.php";
@@ -34,13 +39,8 @@ echo $obj->hello();
 echo "<br/>";
 echo "<br/>";
 
-spl_autoload_register(function ($name) {
-    echo "Хочу загрузить $name.\n";
-    throw new Exception("Невозможно загрузить $name.");
-});
-
 try {
-    $obj = new test2();
+    $obj = new test2;
 } catch (Exception $e) {
     echo $e->getMessage(), "\n";
 }
