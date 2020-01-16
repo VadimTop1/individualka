@@ -10,7 +10,7 @@
     }
 );*/
 spl_autoload_register(function ($name) {
-    $className = 'app/'.$name;
+    $className = 'app/'.$name.'.php';
     echo "Хочу загрузить: ".$className."\n";
 
     require_once $className;
