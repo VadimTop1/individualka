@@ -1,6 +1,6 @@
 <?php
 // App/test/test1/test1.php
-namespace App\test\test1;
+namespace test\test1;
 
 class test1 {	
 	function hello() {
