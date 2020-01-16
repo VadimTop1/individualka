@@ -1,24 +1,24 @@
 <?php
-use App\test2Fold\test1\test1 as ClassTest;
-use App\test2Fold\test1\MyClass;
+use App\test2Fold\test1\test1 ;
+use App\test2Fold\test1\MyClass as ClassTest;
 
 
 //include 'connect.php';
 //namespace App\test2Fold\test1;
 
-echo "Start22 <br/>";
+echo "Start22 <br/>  ----- <br/>";
 
 $obj = new ClassTest;
 echo $obj->hello();
 
 echo "<br/> ---- <br/>";
 
-$obj2 = new MyClass();
+$obj2 = new test1();
 echo $obj2->hello();
 
 echo "<br/>----<br/>";
 
-$obj2 = new MyClass;
+$obj2 = new test1;
 echo $obj2->hello();
 
 //$query = "INSERT INTO customers (FirstName ,LastName ,Email ,Age  ) VALUES ('Дима','Монитор', 'dim@mail.ru', 21);";
