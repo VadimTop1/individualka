@@ -13,17 +13,17 @@ spl_autoload_register(function ($name) {
     $className = 'app\\'.$name.'.php';
 
     $namePath = explode("\\", $className);
-    echo $namePath[0];
+    //echo $namePath[0];
     $className = $namePath[0];
     $i = 0;
     foreach($namePath as $value)
     {
         if($i != 0)
-            $className += "/" . $value;
+            $className .= "/" . $value;
         else
             $i = 1;
     }
-    echo "Хочу загрузить: ".$className."\n";
+    echo "<br/> Хочу загрузить: ".$className."\n";
     require_once $className;
     throw new Exception("Невозможно загрузить". $className);
 });
