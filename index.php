@@ -31,6 +31,21 @@ echo "<br/>";
 $obj = new test2;
 echo $obj->hello();
 
+echo "<br/>";
+echo "<br/>";
+
+spl_autoload_register(function ($name) {
+    echo "Хочу загрузить $name.\n";
+    throw new Exception("Невозможно загрузить $name.");
+});
+
+try {
+    $obj = new test2();
+} catch (Exception $e) {
+    echo $e->getMessage(), "\n";
+}
+
+
 //$query = "INSERT INTO customers (FirstName ,LastName ,Email ,Age  ) VALUES ('Дима','Монитор', 'dim@mail.ru', 21);";
 //$result = pg_query($query) or die('Ошибка запроса: ' . pg_last_error());
 // Выполнение SQL-запроса
