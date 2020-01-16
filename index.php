@@ -1,11 +1,18 @@
 <?php
 //include 'connect.php';
 //namespace App\test2Fold\test1;
-echo "Start <br/>";
 use App\test2Fold\test1\test1;
+use App\test2Fold\test1\MyClass;
+
+echo "Start <br/>";
 
 $obj = new test1();
-echo $obj->hello(); // hello it’s core
+echo $obj->hello();
+
+echo "<br/>";
+
+$obj2 = new MyClass();
+echo $obj->hello();
 
 //$query = "INSERT INTO customers (FirstName ,LastName ,Email ,Age  ) VALUES ('Дима','Монитор', 'dim@mail.ru', 21);";
 //$result = pg_query($query) or die('Ошибка запроса: ' . pg_last_error());
