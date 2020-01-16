@@ -1,4 +1,6 @@
 <?php
+require_once "App/test2Fold/test1/MyClass.php";
+
 use App\test2Fold\test1\test1 ;
 use App\test2Fold\test1\MyClass;
 
