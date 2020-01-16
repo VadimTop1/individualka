@@ -9,6 +9,8 @@ $table;
 
 if ($pgsql_conn) {
     echo "Успешно подключились к : " . pg_host($pgsql_conn) . "<br/>\n";
+
+    
     //Список пользователей:
     //select * from pg_shadow;
     //$query = "SELECT * from pg_shadow";
@@ -21,13 +23,16 @@ if ($pgsql_conn) {
     //echo "<br/>-> " . $result;
     
 
-    //$query = "show databases like 'customers' ";
+    $query = "show databases like 'customers'";
+
+    //Удаление данных из таблицы
     //DROP TABLE films
     //$query = "DROP TABLE customers;";
-    //$result=pg_query($pgsql_conn, $query);
 
-    $query = "SELECT count(*) from pg_tables where tablename='table1'";
     $result=pg_query($pgsql_conn, $query);
+
+    //$query = "SELECT count(*) from pg_tables where tablename='table1'";
+    //$result=pg_query($pgsql_conn, $query);
     echo "-> " . $result;
 
    // $query = 'DELETE FROM customers;';
