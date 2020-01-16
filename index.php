@@ -30,7 +30,7 @@ $arr = [
 
 foreach($arr as $value)
 {
-    $res .$value;
+    $res .= $value;
 }
 
 echo $res;
