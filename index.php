@@ -1,15 +1,5 @@
 <?php
-//Авто загрузка классов
-/*spl_autoload_register(
-    function (string $className)
-    {
-        //echo __DIR__ . '\\'. $className . '.php';
-        //echo "<br/><br/>".__DIR__ . "<br/>";
-        var_dump(__DIR__ . '/src/' . $className . '.php');
-        //require_once __DIR__ . '/src/' . $className . '.php';
-    }
-);*/
-
+//Создание коректного пути к классу
 function FragmentationPath($path):string
 {
     $arrFolder = explode("\\", $path);
@@ -19,7 +9,7 @@ function FragmentationPath($path):string
 
     return $className .= ".php";
 }
-
+//Авто загрузка классов
 spl_autoload_register(function ($name) 
 {
     $className = FragmentationPath($name);
@@ -27,32 +17,16 @@ spl_autoload_register(function ($name)
     require_once $className;
 });
 
-use src\test1\test1 as mainTest;
-use src\test2\test2;
-use src\TeSt3\TeSt3;
-use WorkWithBD\ConnectBD\ConnectBD as ConnectDataBase;
 
-echo "Start4 <br/>  ----- <br/>";
+//use src\test1\test1 as mainTest;
+//use WorkWithBD\ConnectBD\ConnectBD as ConnectDataBase;
 
-$obj2 = new test2;
-echo $obj2->hello();
-echo "<br/>";
+//echo "Start4 <br/>  ----- <br/>";
 
-$obj3 = new mainTest;
-echo $obj3->hello();
-echo "<br/>";
+//$obj3 = new mainTest;
+//echo $obj3->hello();
+//echo "<br/>";
 
-$obj = new test2;
-echo $obj->hello();
-echo "<br/>";
-
-$obj4 = new TeSt3;
-echo $obj4->hello();
-echo "<br/>";
-
-$objConnect = new ConnectDataBase;
-echo $objConnect->hello();
-echo "<br/>";
 
 //$query = "INSERT INTO customers (FirstName ,LastName ,Email ,Age  ) VALUES ('Дима','Монитор', 'dim@mail.ru', 21);";
 //$result = pg_query($query) or die('Ошибка запроса: ' . pg_last_error());
