@@ -1,5 +1,6 @@
 <?php
 require_once "App/test2Fold/test1/MyClass.php";
+require_once "App/test2Fold/test1/test1.php";
 
 use App\test2Fold\test1\test1 ;
 use App\test2Fold\test1\MyClass;
@@ -12,6 +13,12 @@ echo "Start22 <br/>  ----- <br/>";
 
 $obj = new MyClass;
 echo $obj->hello();
+
+echo "<br/>";
+
+$obj2 = new test1;
+echo $obj2->hello();
+
 
 //$query = "INSERT INTO customers (FirstName ,LastName ,Email ,Age  ) VALUES ('Дима','Монитор', 'dim@mail.ru', 21);";
 //$result = pg_query($query) or die('Ошибка запроса: ' . pg_last_error());
