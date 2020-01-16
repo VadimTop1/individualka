@@ -33,6 +33,7 @@ foreach($arr as $value)
     $res .$value;
 }
 
+echo $res;
 
 //use src\test1\test1 as mainTest;
 //use WorkWithBD\ConnectBD\ConnectBD as ConnectDataBase;
