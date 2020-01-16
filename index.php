@@ -1,18 +1,25 @@
 <?php
-//include 'connect.php';
-//namespace App\test2Fold\test1;
 use App\test2Fold\test1\test1;
 use App\test2Fold\test1\MyClass;
 
-echo "Start <br/>";
+
+//include 'connect.php';
+//namespace App\test2Fold\test1;
+
+echo "Start22 <br/>";
 
 $obj = new test1();
 echo $obj->hello();
 
-echo "<br/>";
+echo "<br/>----<br/>";
 
 $obj2 = new MyClass();
-echo $obj->hello();
+echo $obj2->hello();
+
+echo "<br/>----<br/>";
+
+$obj2 = new MyClass;
+echo $obj2->hello();
 
 //$query = "INSERT INTO customers (FirstName ,LastName ,Email ,Age  ) VALUES ('Дима','Монитор', 'dim@mail.ru', 21);";
 //$result = pg_query($query) or die('Ошибка запроса: ' . pg_last_error());
