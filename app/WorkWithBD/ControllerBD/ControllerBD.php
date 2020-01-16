@@ -48,22 +48,34 @@ final class ControllerBD {
     
     public function get_host(): string
     {
-        return $this->host;
+        if($this->workConnection == 0)
+            return $this->host;
+        else
+            return null;
     }
 
     public function get_dbname(): string
     {
-        return $this->dbname;
+        if($this->workConnection == 0)
+            return $this->dbname;
+        else
+            return null;
     }
 
     public function get_user(): string
     {
-        return $this->user;
+        if($this->workConnection == 0)
+            return $this->user;
+        else
+            return null;
     }
 
     public function get_password(): string
     {
-        return $this->password;
+        if($this->workConnection == 0)
+            return $this->password;
+        else
+            return null;
     }
 
     public function get_workConnection(): int
