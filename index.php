@@ -1,15 +1,14 @@
 <?php
 //Авто загрузка классов
-spl_autoload_register(
+/*spl_autoload_register(
     function (string $className)
     {
         //echo __DIR__ . '\\'. $className . '.php';
         //echo "<br/><br/>".__DIR__ . "<br/>";
-        var_dump('app\\' . $className . '.php');
+        //var_dump('app\\' . $className . '.php');
         require_once 'app\\' . $className . '.php';
     }
-);
-
+);*/
 require_once 'src/test1/test1.php';
 //require_once "App/test2Fold/test1/test1.php";
 //require_once "App/test/test1/test1.php";
