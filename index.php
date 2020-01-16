@@ -23,7 +23,7 @@ spl_autoload_register(function ($name) {
         else
             $i = 1;
     }
-    echo "<br/> Хочу загрузить: ".$className."\n";
+    echo "<br/>Хочу загрузить: ".$className."<br/>";
     require_once $className;
     //throw new Exception("<br/>Невозможно загрузить: ". $className);
 });
