@@ -13,45 +13,23 @@
 function FragmentationPath($path):string
 {
     $arrFolder = explode("\\", $path);
-    $className = "app/";
+    $className = "";//"app/";
     foreach($arrFolder as $value)
-            $className .= "/" . $value;
+        $className .= "/" . $value;
 
     return $className .= ".php";
 }
 
-spl_autoload_register(function ($name) {
-    //$className = 'app\\'.$name.'.php';
-
-    //$namePath = explode("\\", $className);
-    //echo $namePath[0];
-    //$className = $namePath[0];
-    //$i = 0;
-    //foreach($namePath as $value)
-    //{
-    //   if($i != 0)
-    //        $className .= "/" . $value;
-    //    else
-    //        $i = 1;
-    //}
-
+spl_autoload_register(function ($name) 
+{
     $className = FragmentationPath($name);
-    echo "<br/>Хочу загрузить: ".$className."<br/>";
+    //echo "<br/>Хочу загрузить: ".$className."<br/>";
     require_once $className;
-    //throw new Exception("<br/>Невозможно загрузить: ". $className);
 });
 
-//require_once 'app/src/test1/test1.php';
-//require_once 'app/src/test2/test2.php';
-//require_once "App/test2Fold/test1/test1.php";
-//require_once "App/test/test1/test1.php";
-
-use src\test1\test1 as mainTest;
-use src\test2\test2;
-use src\TeSt3\TeSt3;
-
-//include 'connect.php';
-//namespace App\test2Fold\test1;
+use app\src\test1\test1 as mainTest;
+use app\src\test2\test2;
+use app\src\TeSt3\TeSt3;
 
 echo "Start4 <br/>  ----- <br/>";
 

@@ -1,5 +1,5 @@
 <?php
-namespace src\TeSt3;
+namespace app\src\TeSt3;
 
 class TeSt3 {	
 	function hello() {
