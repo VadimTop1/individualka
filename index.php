@@ -8,7 +8,7 @@ use App\test2Fold\test1\MyClass as ClassTest;
 
 echo "Start22 <br/>  ----- <br/>";
 
-$obj = new ClassTest;
+$obj = new ClassTest();
 echo $obj->hello();
 
 echo "<br/> ---- <br/>";
