@@ -4,7 +4,7 @@
 
 use App\test2Fold\test1 as test2Foldtest;
 
-$obj = new test2Foldtest\test1();
+$obj = new App\test2Fold\test1\test1;
 echo $obj->hello(); // hello it’s core
 
 //$query = "INSERT INTO customers (FirstName ,LastName ,Email ,Age  ) VALUES ('Дима','Монитор', 'dim@mail.ru', 21);";
