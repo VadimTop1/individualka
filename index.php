@@ -5,7 +5,7 @@ spl_autoload_register(
     {
         //echo __DIR__ . '\\'. $className . '.php';
         //echo "<br/><br/>".__DIR__ . "<br/>";
-        //var_dump($className);
+        var_dump('app\src\\' . $className . '.php');
         require_once 'app\src\\' . $className . '.php';
     }
 );
@@ -14,8 +14,8 @@ spl_autoload_register(
 //require_once "App/test2Fold/test1/test1.php";
 //require_once "App/test/test1/test1.php";
 
-use test\test1\test1 as mainTest;
-use test\test2\test2;
+use src\test1\test1 as mainTest;
+use src\test2\test2;
 
 //include 'connect.php';
 //namespace App\test2Fold\test1;
