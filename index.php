@@ -1,6 +1,6 @@
 <?php
 use App\test2Fold\test1\test1 ;
-use App\test2Fold\test1\MyClass as ClassTest;
+use App\test2Fold\test1\MyClass;
 
 
 //include 'connect.php';
@@ -8,18 +8,8 @@ use App\test2Fold\test1\MyClass as ClassTest;
 
 echo "Start22 <br/>  ----- <br/>";
 
-$obj = new ClassTest();
+$obj = new MyClass;
 echo $obj->hello();
-
-echo "<br/> ---- <br/>";
-
-$obj2 = new test1();
-echo $obj2->hello();
-
-echo "<br/>----<br/>";
-
-$obj2 = new test1;
-echo $obj2->hello();
 
 //$query = "INSERT INTO customers (FirstName ,LastName ,Email ,Age  ) VALUES ('Дима','Монитор', 'dim@mail.ru', 21);";
 //$result = pg_query($query) or die('Ошибка запроса: ' . pg_last_error());
