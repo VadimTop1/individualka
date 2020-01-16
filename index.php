@@ -1,10 +1,11 @@
 <?php
 require_once "App/test2Fold/test1/MyClass.php";
 require_once "App/test2Fold/test1/test1.php";
+require_once "App/test/test1/test1.php";
 
 use App\test2Fold\test1\test1 ;
 use App\test2Fold\test1\MyClass;
-
+use App\test\test1\test1 as mainTest;
 
 //include 'connect.php';
 //namespace App\test2Fold\test1;
@@ -19,6 +20,11 @@ echo "<br/>";
 $obj2 = new test1;
 echo $obj2->hello();
 
+echo "<br/>";
+echo "<br/>";
+
+$obj3 = new mainTest;
+echo $obj3->hello();
 
 //$query = "INSERT INTO customers (FirstName ,LastName ,Email ,Age  ) VALUES ('Дима','Монитор', 'dim@mail.ru', 21);";
 //$result = pg_query($query) or die('Ошибка запроса: ' . pg_last_error());
