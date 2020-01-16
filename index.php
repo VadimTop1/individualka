@@ -1,7 +1,16 @@
 <?php
-require_once "App/test2Fold/test1/MyClass.php";
-require_once "App/test2Fold/test1/test1.php";
-require_once "App/test/test1/test1.php";
+//Авто загрузка классов
+spl_autoload_register(
+    function (string $className)
+    {
+        //var_dump($className);
+        require_once __DIR__ . $className . '.php';
+    }
+);
+
+//require_once "App/test2Fold/test1/MyClass.php";
+//require_once "App/test2Fold/test1/test1.php";
+//require_once "App/test/test1/test1.php";
 
 use App\test2Fold\test1\test1 ;
 use App\test2Fold\test1\MyClass;
