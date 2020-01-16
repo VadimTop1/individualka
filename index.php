@@ -10,7 +10,7 @@
     }
 );*/
 require_once 'app/src/test1/test1.php';
-require_once 'app/src/test1/test2.php';
+require_once 'app/src/test2/test2.php';
 //require_once "App/test2Fold/test1/test1.php";
 //require_once "App/test/test1/test1.php";
 
@@ -20,7 +20,7 @@ use src\test2\test2;
 //include 'connect.php';
 //namespace App\test2Fold\test1;
 
-echo "Start3 <br/>  ----- <br/>";
+echo "Start4 <br/>  ----- <br/>";
 
 $obj3 = new mainTest;
 echo $obj3->hello();
