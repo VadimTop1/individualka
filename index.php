@@ -30,18 +30,17 @@ use src\test2\test2;
 
 echo "Start4 <br/>  ----- <br/>";
 
-$obj3 = new mainTest;
-echo $obj3->hello();
-
-echo "<br/>";
-echo "<br/>";
-
 try {
     $obj2 = new test2;
     echo $obj2->hello();
 } catch (Exception $e) {
     echo $e->getMessage(), "\n";
 }
+echo "<br/>";
+echo "<br/>";
+
+$obj3 = new mainTest;
+echo $obj3->hello();
 
 echo "<br/>";
 echo "<br/>";
