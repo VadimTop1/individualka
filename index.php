@@ -1,5 +1,5 @@
 <?php
-use App\test2Fold\test1\test1;
+use App\test2Fold\test1\test1 as ClassTest;
 use App\test2Fold\test1\MyClass;
 
 
@@ -8,10 +8,10 @@ use App\test2Fold\test1\MyClass;
 
 echo "Start22 <br/>";
 
-$obj = new test1();
+$obj = new ClassTest;
 echo $obj->hello();
 
-echo "<br/>----<br/>";
+echo "<br/> ---- <br/>";
 
 $obj2 = new MyClass();
 echo $obj2->hello();
