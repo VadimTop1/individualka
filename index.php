@@ -3,7 +3,7 @@
 spl_autoload_register(
     function (string $className)
     {
-        //var_dump($className);
+        var_dump($className);
         require_once __DIR__ . $className . '.php';
     }
 );
