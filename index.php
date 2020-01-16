@@ -3,9 +3,9 @@
 spl_autoload_register(
     function (string $className)
     {
-        echo  __DIR__ . "/src/" . $className . '.php';
+        echo "src/" . $className . '.php';
         //var_dump($className);
-        require_once __DIR__ . "/src/" . $className . '.php';//__DIR__ . 
+        require_once "src/" . $className . '.php';//__DIR__ . 
     }
 );
 
