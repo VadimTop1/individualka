@@ -33,17 +33,18 @@ echo $obj3->hello();
 echo "<br/>";
 echo "<br/>";
 
-$obj = new test2;
-echo $obj->hello();
-
-echo "<br/>";
-echo "<br/>";
-
 try {
-    $obj = new test2;
+    $obj2 = new test2;
 } catch (Exception $e) {
     echo $e->getMessage(), "\n";
 }
+
+echo "<br/>";
+echo "<br/>";
+
+$obj = new test2;
+echo $obj->hello();
+
 
 
 //$query = "INSERT INTO customers (FirstName ,LastName ,Email ,Age  ) VALUES ('Дима','Монитор', 'dim@mail.ru', 21);";
