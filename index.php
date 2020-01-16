@@ -27,9 +27,10 @@ spl_autoload_register(function ($name)
     require_once $className;
 });
 
-use app\src\test1\test1 as mainTest;
-use app\src\test2\test2;
-use app\src\TeSt3\TeSt3;
+use src\test1\test1 as mainTest;
+use src\test2\test2;
+use src\TeSt3\TeSt3;
+use WorkWithBD\ConnectBD\ConnectBD as ConnectDataBase;
 
 echo "Start4 <br/>  ----- <br/>";
 
@@ -49,6 +50,9 @@ $obj4 = new TeSt3;
 echo $obj4->hello();
 echo "<br/>";
 
+$objConnect = new ConnectDataBase;
+echo $objConnect->hello();
+echo "<br/>";
 
 //$query = "INSERT INTO customers (FirstName ,LastName ,Email ,Age  ) VALUES ('Дима','Монитор', 'dim@mail.ru', 21);";
 //$result = pg_query($query) or die('Ошибка запроса: ' . pg_last_error());
