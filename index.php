@@ -17,6 +17,8 @@ spl_autoload_register(function ($name)
     require_once $className;
 });
 
+
+$res = "Query: ";
 $arr = [
     "id SERIAL PRIMARY KEY,",
             "firstName CHARACTER VARYING(30),",
@@ -28,7 +30,7 @@ $arr = [
 
 foreach($arr as $value)
 {
-    echo("<br/>".$value);
+    $res .$value;
 }
 
 

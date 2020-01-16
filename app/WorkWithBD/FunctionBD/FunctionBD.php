@@ -30,6 +30,10 @@ abstract class FunctionBD
     {
         $queryStr = "CREATE TABLE ".$arrObj->get_NameTable()."(";//."(Id SERIAL PRIMARY KEY, FirstName CHARACTER VARYING(30), LastName CHARACTER VARYING(30),Email CHARACTER VARYING(30),Age INTEGER);";
         
+        foreach($arrObj->get_GreqteQuery() as $value)
+        {
+            $queryStr . $value;
+        }
         $queryStr .= ");";
         //$queryStr = "SELECT * FROM books ORDER BY author";
         $qu = pg_query($this->get_pgsql(), $queryStr);
