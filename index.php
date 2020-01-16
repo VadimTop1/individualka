@@ -13,7 +13,7 @@
 function FragmentationPath($path):string
 {
     $arrFolder = explode("\\", $path);
-    $className = "";//"app/";
+    $className = __DIR__;//"app/";
     foreach($arrFolder as $value)
         $className .= "/" . $value;
 
@@ -23,7 +23,7 @@ function FragmentationPath($path):string
 spl_autoload_register(function ($name) 
 {
     $className = FragmentationPath($name);
-    //echo "<br/>Хочу загрузить: ".$className."<br/>";
+    echo "<br/>Хочу загрузить: ".$className."<br/>";
     require_once $className;
 });
 
