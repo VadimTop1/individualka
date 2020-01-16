@@ -23,15 +23,15 @@ class Table1 implements InterfaceTables
     /**
      * @return array
      **/
-    static public function get_NameMethodClass() : array
+    static public function get_GreqteQuery() : array
     {
         //$array = array("firstName", "secondName", "thirdName", "age");
         return [
-            ["id", "SERIAL PRIMARY KEY"],
-            ["firstName", "CHARACTER VARYING(30)"],
-            ["secondName", "CHARACTER VARYING(30)"],
-            ["thirdName", "CHARACTER VARYING(30)"],
-            ["age","INTEGER"]
+            "id SERIAL PRIMARY KEY,",
+            "firstName CHARACTER VARYING(30),",
+            "secondName", "CHARACTER VARYING(30),",
+            "thirdName", "CHARACTER VARYING(30),",
+            "age","INTEGER"
         ];
     } 
     

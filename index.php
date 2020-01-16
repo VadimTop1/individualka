@@ -18,11 +18,11 @@ spl_autoload_register(function ($name)
 });
 
 $arr = [
-    ["id", "SERIAL PRIMARY KEY"],
-    ["firstName", "CHARACTER VARYING(30)"],
-    ["secondName", "CHARACTER VARYING(30)"],
-    ["thirdName", "CHARACTER VARYING(30)"],
-    ["age","INTEGER"]
+    "id SERIAL PRIMARY KEY,",
+            "firstName CHARACTER VARYING(30),",
+            "secondName", "CHARACTER VARYING(30),",
+            "thirdName", "CHARACTER VARYING(30),",
+            "age","INTEGER"
 ];
 
 foreach($arr as $value)
