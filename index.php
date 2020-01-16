@@ -14,9 +14,8 @@ spl_autoload_register(
 //require_once "App/test2Fold/test1/test1.php";
 //require_once "App/test/test1/test1.php";
 
-use test2Fold\test1\test1 ;
-use test2Fold\test1\MyClass;
 use test\test1\test1 as mainTest;
+use test\test2\test2;
 
 //include 'connect.php';
 //namespace App\test2Fold\test1;
@@ -29,14 +28,8 @@ echo $obj3->hello();
 echo "<br/>";
 echo "<br/>";
 
-
-$obj = new MyClass;
+$obj = new test2;
 echo $obj->hello();
-
-echo "<br/>";
-
-$obj2 = new test1;
-echo $obj2->hello();
 
 //$query = "INSERT INTO customers (FirstName ,LastName ,Email ,Age  ) VALUES ('Дима','Монитор', 'dim@mail.ru', 21);";
 //$result = pg_query($query) or die('Ошибка запроса: ' . pg_last_error());
