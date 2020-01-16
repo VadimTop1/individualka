@@ -13,7 +13,7 @@
 function FragmentationPath($path):string
 {
     $arrFolder = explode("\\", $path);
-    $className = __DIR__;//"app/";
+    $className = "app/";//__DIR__;//"app/";
     foreach($arrFolder as $value)
         $className .= "/" . $value;
 
