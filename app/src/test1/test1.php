@@ -1,5 +1,4 @@
 <?php
-// App/test/test1/test1.php
 namespace test\test1;
 
 class test1 {	
