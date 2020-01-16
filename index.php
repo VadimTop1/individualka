@@ -4,7 +4,7 @@ spl_autoload_register(
     function (string $className)
     {
         echo "src\\" . $className . '.php';
-        echo "<br/><br/>".__DIR__ . "<br/>";
+        //echo "<br/><br/>".__DIR__ . "<br/>";
         //var_dump($className);
         require_once __DIR__ . $className . '.php';//__DIR__ . 
     }
@@ -23,19 +23,20 @@ use test\test1\test1 as mainTest;
 
 echo "Start3 <br/>  ----- <br/>";
 
-$obj2 = new test1;
-echo $obj2->hello();
+$obj3 = new mainTest;
+echo $obj3->hello();
 
 echo "<br/>";
+echo "<br/>";
+
 
 $obj = new MyClass;
 echo $obj->hello();
 
 echo "<br/>";
-echo "<br/>";
 
-$obj3 = new mainTest;
-echo $obj3->hello();
+$obj2 = new test1;
+echo $obj2->hello();
 
 //$query = "INSERT INTO customers (FirstName ,LastName ,Email ,Age  ) VALUES ('Дима','Монитор', 'dim@mail.ru', 21);";
 //$result = pg_query($query) or die('Ошибка запроса: ' . pg_last_error());
