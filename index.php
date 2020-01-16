@@ -2,10 +2,10 @@
 //include 'connect.php';
 //namespace App\test2Fold\test1;
 echo "Start <br/>";
-use App\test2Fold\test1 as test2Foldtest;
+use App\test2Fold\test1\test1;
 
-//$obj = new test2Foldtest\test1;
-//echo $obj->hello(); // hello it’s core
+$obj = new test1;
+echo $obj->hello(); // hello it’s core
 
 //$query = "INSERT INTO customers (FirstName ,LastName ,Email ,Age  ) VALUES ('Дима','Монитор', 'dim@mail.ru', 21);";
 //$result = pg_query($query) or die('Ошибка запроса: ' . pg_last_error());
