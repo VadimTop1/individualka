@@ -4,7 +4,7 @@
 echo "Start <br/>";
 use App\test2Fold\test1\test1;
 
-$obj = new test1;
+$obj = new test1();
 echo $obj->hello(); // hello it’s core
 
 //$query = "INSERT INTO customers (FirstName ,LastName ,Email ,Age  ) VALUES ('Дима','Монитор', 'dim@mail.ru', 21);";
