@@ -50,9 +50,9 @@ $obj4 = new TeSt3;
 echo $obj4->hello();
 echo "<br/>";
 
-//$objConnect = new ConnectDataBase;
-//echo $objConnect->hello();
-//echo "<br/>";
+$objConnect = new ConnectDataBase;
+echo $objConnect->hello();
+echo "<br/>";
 
 //$query = "INSERT INTO customers (FirstName ,LastName ,Email ,Age  ) VALUES ('Дима','Монитор', 'dim@mail.ru', 21);";
 //$result = pg_query($query) or die('Ошибка запроса: ' . pg_last_error());
