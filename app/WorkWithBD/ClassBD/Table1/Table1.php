@@ -1,8 +1,13 @@
 <?php
 namespace WorkWithBD\ClassBD\Table1;
 
-class Table1
+use  WorkWithBD\InterfacesBD\InterfaceTables\InterfaceTables;
+
+class Table1 implements InterfaceTables
 {
+    /** @var int */
+    protected $id;
+
     /** @var string */
     protected $firstName;
 
@@ -15,14 +20,38 @@ class Table1
     /** @var int */
     protected $age;
 
-
+    /**
+     * @return array
+     **/
+    static public function get_NameMethodClass() : array
+    {
+        //$array = array("firstName", "secondName", "thirdName", "age");
+        return [
+            ["id", "SERIAL PRIMARY KEY"],
+            ["firstName", "CHARACTER VARYING(30)"],
+            ["secondName", "CHARACTER VARYING(30)"],
+            ["thirdName", "CHARACTER VARYING(30)"],
+            ["age","INTEGER"]
+        ];
+    } 
+    
     /**
      * @return string
      **/
-    public function get_NameTable() : string
+    static public function get_NameTable() : string
     {
-        return self::class;
+        return "Table1";
     }  
+
+
+    /**
+     * @param int $_id
+     * @return int
+     **/
+    public function set_id(string $_id)
+    {
+        $this->id = $_id;
+    }
 
     /**
      * @param string $_firstName
@@ -58,6 +87,14 @@ class Table1
     public function set_age(int $_age)
     {
         $this->age = $_age;
+    }
+
+    /**
+     * @return int
+     **/
+    public function get_id() : int
+    {
+        return $this->id;
     }
 
     /**

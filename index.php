@@ -17,6 +17,19 @@ spl_autoload_register(function ($name)
     require_once $className;
 });
 
+$arr = [
+    ["id", "SERIAL PRIMARY KEY"],
+    ["firstName", "CHARACTER VARYING(30)"],
+    ["secondName", "CHARACTER VARYING(30)"],
+    ["thirdName", "CHARACTER VARYING(30)"],
+    ["age","INTEGER"]
+];
+
+foreach($arr as $value)
+{
+    echo("<br/>".$value);
+}
+
 
 //use src\test1\test1 as mainTest;
 //use WorkWithBD\ConnectBD\ConnectBD as ConnectDataBase;

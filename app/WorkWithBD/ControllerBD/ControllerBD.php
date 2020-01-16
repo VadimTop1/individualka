@@ -1,7 +1,10 @@
 <?php
 namespace WorkWithBD\ControllerBD;
 
-final class ControllerBD {
+use WorkWithBD\FunctionBD\FunctionBD;
+
+
+final class ControllerBD extends FunctionBD{
 
     private $host;
 
@@ -10,6 +13,8 @@ final class ControllerBD {
     private $user;
 
     private $password;
+
+    private $pgsql;
 
     private $workConnection;
 
@@ -20,9 +25,11 @@ final class ControllerBD {
         $this->user = $_user;
         $this->password = $_password;
         $this->workConnection = 0;
+
+        $this->pgsql = self::Connecting();//$this->
     }
 
-	public function Connecting() 
+	private function Connecting() 
 	{
         if($this->workConnection == 0)
         {
@@ -43,7 +50,7 @@ final class ControllerBD {
             
         }
 
-        return false;
+        return $this->pgsql;
     }
     
     public function get_host(): string
@@ -76,6 +83,11 @@ final class ControllerBD {
             return $this->password;
         else
             return null;
+    }
+
+    public function get_pgsql()
+    {
+        return $this->pgsql;
     }
 
     public function get_workConnection(): int
