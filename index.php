@@ -10,8 +10,8 @@
     }
 );*/
 spl_autoload_register(function ($name) {
-    echo "Хочу загрузить $name.\n";
-    throw new Exception("Невозможно загрузить $name.");
+    echo "Хочу загрузить".$name."\n";
+    throw new Exception("Невозможно загрузить". $name);
 });
 
 require_once 'app/src/test1/test1.php';
