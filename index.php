@@ -6,15 +6,15 @@ spl_autoload_register(
         //echo __DIR__ . '\\'. $className . '.php';
         //echo "<br/><br/>".__DIR__ . "<br/>";
         //var_dump('app\\' . $className . '.php');
-        //require_once 'app/' . $className . '.php';
+        require_once __DIR__ . '/src/' . $className . '.php';
     }
 );
-require_once 'app/src/test1/test1.php';
+//require_once 'app/src/test1/test1.php';
 //require_once "App/test2Fold/test1/test1.php";
 //require_once "App/test/test1/test1.php";
 
-use src\test1\test1 as mainTest;
-use src\test2\test2;
+use test1\test1 as mainTest;
+use test2\test2;
 
 //include 'connect.php';
 //namespace App\test2Fold\test1;
