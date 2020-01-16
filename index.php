@@ -9,20 +9,33 @@
         //require_once __DIR__ . '/src/' . $className . '.php';
     }
 );*/
-spl_autoload_register(function ($name) {
-    $className = 'app\\'.$name.'.php';
 
-    $namePath = explode("\\", $className);
-    //echo $namePath[0];
-    $className = $namePath[0];
-    $i = 0;
-    foreach($namePath as $value)
-    {
-        if($i != 0)
+function FragmentationPath($path):string
+{
+    $arrFolder = explode("\\", $path);
+    $className = "app/";
+    foreach($arrFolder as $value)
             $className .= "/" . $value;
-        else
-            $i = 1;
-    }
+
+    return $className .= ".php";
+}
+
+spl_autoload_register(function ($name) {
+    //$className = 'app\\'.$name.'.php';
+
+    //$namePath = explode("\\", $className);
+    //echo $namePath[0];
+    //$className = $namePath[0];
+    //$i = 0;
+    //foreach($namePath as $value)
+    //{
+    //   if($i != 0)
+    //        $className .= "/" . $value;
+    //    else
+    //        $i = 1;
+    //}
+
+    $className = FragmentationPath($name);
     echo "<br/>Хочу загрузить: ".$className."<br/>";
     require_once $className;
     //throw new Exception("<br/>Невозможно загрузить: ". $className);
@@ -35,34 +48,28 @@ spl_autoload_register(function ($name) {
 
 use src\test1\test1 as mainTest;
 use src\test2\test2;
+use src\TeSt3\TeSt3;
 
 //include 'connect.php';
 //namespace App\test2Fold\test1;
 
 echo "Start4 <br/>  ----- <br/>";
 
-//try {
-    $obj2 = new test2;
-    echo $obj2->hello();
-//} catch (Exception $e) {
-//    echo $e->getMessage(), "\n";
-//}
-echo "<br/>";
+$obj2 = new test2;
+echo $obj2->hello();
 echo "<br/>";
 
-//try{
-    $obj3 = new mainTest;
-    echo $obj3->hello();
-//} catch (Exception $e) {
-//    echo $e->getMessage(), "\n";
-//}
-
-echo "<br/>";
+$obj3 = new mainTest;
+echo $obj3->hello();
 echo "<br/>";
 
 $obj = new test2;
 echo $obj->hello();
+echo "<br/>";
 
+$obj4 = new TeSt3;
+echo $obj4->hello();
+echo "<br/>";
 
 
 //$query = "INSERT INTO customers (FirstName ,LastName ,Email ,Age  ) VALUES ('Дима','Монитор', 'dim@mail.ru', 21);";
