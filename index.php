@@ -4,7 +4,7 @@ spl_autoload_register(
     function (string $className)
     {
         var_dump($className);
-        require_once __DIR__ . $className . '.php';
+        require_once $className . '.php';//__DIR__ . 
     }
 );
 
@@ -19,7 +19,7 @@ use App\test\test1\test1 as mainTest;
 //include 'connect.php';
 //namespace App\test2Fold\test1;
 
-echo "Start22 <br/>  ----- <br/>";
+echo "Start3 <br/>  ----- <br/>";
 
 $obj = new MyClass;
 echo $obj->hello();
