@@ -5,8 +5,8 @@ spl_autoload_register(
     {
         //echo __DIR__ . '\\'. $className . '.php';
         //echo "<br/><br/>".__DIR__ . "<br/>";
-        var_dump('app\src\\' . $className . '.php');
-        require_once 'app\src\\' . $className . '.php';
+        var_dump('app\\' . $className . '.php');
+        require_once 'app\\' . $className . '.php';
     }
 );
 
