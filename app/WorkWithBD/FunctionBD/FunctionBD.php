@@ -26,63 +26,82 @@ abstract class FunctionBD
         //$data = pg_fetch_object($qu)
     }
     //Создание таблицы
-    public function InspTable(InterfaceTables $arrObj)
+    public function InspTable($arrObj)
     {
-        $queryInsp = "SELECT count(*) FROM ".$arrObj->get_NameTable();
-        $resultInsp = pg_query($this->get_pgsql(), $queryInsp);
-        if($queryInsp >= 0)
-            return true;
+        if($arrObj instanceof InterfaceTables)
+        {
+            $queryInsp = "SELECT count(*) FROM ".$arrObj->get_NameTable();
+            $resultInsp = pg_query($this->get_pgsql(), $queryInsp);
+            if($queryInsp >= 0)
+                return true;
+            else
+                return false;
+        }
         else
             return false;
     }
 
-    public function CreteTable(InterfaceTables $arrObj) 
+    public function CreteTable($arrObj) 
     {
-        echo "<br/>->";
-        $queryStr = "CREATE TABLE ".$arrObj->get_NameTable()."(";//."(Id SERIAL PRIMARY KEY, FirstName CHARACTER VARYING(30), LastName CHARACTER VARYING(30),Email CHARACTER VARYING(30),Age INTEGER);";
-        foreach($arrObj->get_GreqteQuery() as $value)
-            $queryStr .= $value;   
-        $queryStr .= ");";
-        echo "<br/>-> Создание таблицы, запрос: ". $queryStr;
+        if($arrObj instanceof InterfaceTables)
+        {
+            $queryStr = "CREATE TABLE ".$arrObj->get_NameTable()."(";//."(Id SERIAL PRIMARY KEY, FirstName CHARACTER VARYING(30), LastName CHARACTER VARYING(30),Email CHARACTER VARYING(30),Age INTEGER);";
+            foreach($arrObj->get_GreqteQuery() as $value)
+                $queryStr .= $value;   
+            $queryStr .= ");";
+            echo "<br/>-> Создание таблицы, запрос: ". $queryStr;
 
-        $qu = pg_query($this->get_pgsql(), $queryStr);
-        echo "<br/>" . $this->InspTable($arrObj);
+            $qu = pg_query($this->get_pgsql(), $queryStr);
+            echo "<br/>" . $this->InspTable($arrObj);
 
-        return $this->InspTable($arrObj);
+            return $this->InspTable($arrObj);
+        }
+        else
+            return false;
     }
 
     //Добавить данные в таблицу
-    public function AddDataTable(InterfaceTables $arrObj, array $arrData, int $activateId) 
+    public function AddDataTable($arrObj, array $arrData, int $activateId) 
     {
-        $queryInsp = "SELECT count(*) FROM ".$arrObj->get_NameTable();
-        $resultInspOld = pg_query($this->get_pgsql(), $queryInsp);
-
-        $queryStr = "INSERT INTO ".$arrObj->get_NameTable()." VALUES (";
-        $i = $activateId;
-        foreach($arrData as $value)
+        if($arrObj instanceof InterfaceTables)
         {
-            if($i != 0)
-                $queryStr .= $value . ",";
-            else
-                $i--;
-        }
-        $queryStr = substr($queryStr, 0, -1);
-        $queryStr .= ");";
-        $qu = pg_query($this->get_pgsql(), $queryStr);
+            $queryInsp = "SELECT count(*) FROM ".$arrObj->get_NameTable();
+            $resultInspOld = pg_query($this->get_pgsql(), $queryInsp);
 
-        $queryInsp = "SELECT count(*) FROM ".$arrObj->get_NameTable();
-        $resultInspNew = pg_query($this->get_pgsql(), $queryInsp);
-        if($resultInspOld < $resultInspNew)
-            return true;
+            $queryStr = "INSERT INTO ".$arrObj->get_NameTable()." VALUES (";
+            $i = $activateId;
+            foreach($arrData as $value)
+            {
+                if($i != 0)
+                    $queryStr .= $value . ",";
+                else
+                    $i--;
+            }
+            $queryStr = substr($queryStr, 0, -1);
+            $queryStr .= ");";
+            $qu = pg_query($this->get_pgsql(), $queryStr);
+
+            $queryInsp = "SELECT count(*) FROM ".$arrObj->get_NameTable();
+            $resultInspNew = pg_query($this->get_pgsql(), $queryInsp);
+            if($resultInspOld < $resultInspNew)
+                return true;
+            else
+                return false;
+        }
         else
             return false;
     }
 
     //Вывод данных из таблицы
-    public function OutPutDataTable(InterfaceTables $arrObj) 
+    public function OutPutDataTable(&$arrObj) 
     {
-        $queryInsp = "SELECT * FROM ".$arrObj->get_NameTable();
-        return pg_fetch_object($queryInsp);
+        if($arrObj instanceof InterfaceTables)
+        {
+            $queryInsp = "SELECT * FROM ".$arrObj->get_NameTable();
+            pg_fetch_object($queryInsp);
+        }
+        else
+            return false;
     }
 }
 ?>
