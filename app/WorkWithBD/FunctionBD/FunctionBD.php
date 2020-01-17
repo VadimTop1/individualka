@@ -113,8 +113,8 @@ abstract class FunctionBD
             $result = pg_query_params($this->get_pgsql(), 'SELECT * FROM Test1');
             
             echo"<br/>----> Вывод чистой функции:<br/>";
-            $arrObj = pg_fetch_object($qu);
-            var_dump(pg_fetch_object($qu));
+            $arrObj = pg_fetch_object($result);
+            var_dump(pg_fetch_object($result));
 
             echo "<br/>----> Вывод массива: <br/>";
             var_dump($arrObj);
