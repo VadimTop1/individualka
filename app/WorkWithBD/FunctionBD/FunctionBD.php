@@ -67,19 +67,16 @@ abstract class FunctionBD
     }
 
     //Добавить данные в таблицу
-    public function AddDataTable($arrObj, array $arrData, int $activateId) 
+    public function AddDataTable($arrObj, array $arrData /*int $activateId*/) 
     {
         echo "<br/><br/>-> Проверка интерфейса,перед добавлением: ". $arrObj instanceof InterfaceTables;
         if($arrObj instanceof InterfaceTables)
         {
-            $queryStr = "INSERT INTO ".$arrObj->get_NameTable()."(firstName, secondName, thirdName, age) VALUES (";
-            $i = $activateId;
+            $queryStr = "INSERT INTO ".$arrObj->get_NameTable()."(secondName, firstName, thirdName, age) VALUES (";
+            //$i = $activateId;
             foreach($arrData as $value)
             {
-                if($i != 0)
-                    $queryStr .= "'".$value . "',";
-                else
-                    $i--;
+                $queryStr .= "'".$value . "',";
             }
             $queryStr = substr($queryStr, 0, -1);
             $queryStr .= ");";
