@@ -83,7 +83,8 @@ abstract class FunctionBD
             $queryStr .= ");";
             echo "<br/><br/>-> Добавление строки данных в таблицу, запрос: <br/>----> ". $queryStr;
             $qu = pg_query($this->get_pgsql(), $queryStr);
-
+            echo "<br/>----> Вывод результат: <br/>";
+            var_dump($qu);
             $queryInsp = "SELECT count(*) FROM ".$arrObj->get_NameTable();
             $resultInspNew = pg_query($this->get_pgsql(), $queryInsp);
             if($resultInspOld < $resultInspNew)
