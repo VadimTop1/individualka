@@ -102,12 +102,12 @@ abstract class FunctionBD
             //echo"<br/>----> Вывод чистой функции:<br/>";
             //$arrObj = pg_fetch_object($qu);
             //echo "<br/>----><br/>";
-            //while ($data  = pg_fetch_object($qu)) {
-            //    echo $data ->get_firstName()." ";
-            //    echo $data ->get_secondName() ." ";
-            //    echo $data ->get_thirdName() ." [ ";
-            //    echo $data ->get_age()." ]<BR/>";
-            //    }
+            while ($data  = pg_fetch_object($qu,null,$arrObj)) {
+                echo $data ->get_firstName()." ";
+                echo $data ->get_secondName() ." ";
+                echo $data ->get_thirdName() ." [ ";
+                echo $data ->get_age()." ]<BR/>";
+                }
             //var_dump(pg_fetch_object($qu));
 
             //echo "<br/>----> Вывод массива: <br/>";
