@@ -109,7 +109,7 @@ abstract class FunctionBD
 
     public function aa($arrObj)
     {
-        echo "<br/>-> Проверка интерфейса,перед добавлением: ". $arrObj instanceof InterfaceTables;
+        echo "<br/><br/>-> Проверка интерфейса,перед добавлением: ". $arrObj instanceof InterfaceTables;
         echo "<br/>";
         echo "<br/>-> Таблица аргумента: ".$arrObj->get_NameTable()."<br/>";
         if($arrObj instanceof InterfaceTables)
@@ -118,8 +118,8 @@ abstract class FunctionBD
             $queryStr = "SELECT * FROM pg_catalog.pg_tables;";
             
             $result = pg_query($this->get_pgsql(), $queryStr);
-            foreach( $result as $value)
-                echo "<br/>----> " . $value;
+            echo "<br/>---->".$result;// as $value)
+                //echo "<br/>----> " . $value;
         }
          else
             echo "ERROR";
