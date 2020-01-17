@@ -28,7 +28,7 @@ $user="rtokoowoircggm";
 $password="7b7b20b8a7e3719a92a0f789626bfcd89b12e39de5e69bef5e706717a99eab24";
 
 $obj_ControllerBD = new ControllerBD($host,$dbname,$user,$password);
-$obj_Table1 = new Table1;
+//$obj_Table1 = new Table1;
 
 $obj_ControllerBD->aa();
 //$obj_ControllerBD->CreteTable($obj_Table1);
