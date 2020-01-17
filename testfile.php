@@ -2,7 +2,7 @@
 
 include "index.php";
 
-if( isset( $_POST['nazvanie_knopki'] ) )
+if( isset( $_POST['nazvanie_knopki'] ) && isset($_POST['firstName'] ) && isset($_POST['secondName'] ) && isset($_POST['thirdName'] ) && isset($_POST['age'] ) )
 {
     $arrData = [
         "'".(string)$_POST['firstName']."'",
@@ -10,7 +10,7 @@ if( isset( $_POST['nazvanie_knopki'] ) )
         "'".(string)$_POST['thirdName']."'",
         (int)$_POST['age']
     ];
-    echo $arrData[0]." ". $arrData[1] . " " . $arrData[2]. " " . $arrData[3];
+    //echo $arrData[0]." ". $arrData[1] . " " . $arrData[2]. " " . $arrData[3];
     if($obj_ControllerBD->AddDataTable($obj_Table1,$arrData) != false)
         echo "<br/>-> Успешно добавленно ";
     else
