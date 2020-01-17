@@ -49,6 +49,7 @@ final class ControllerBD extends FunctionBD{
             if ($pgsql_conn) 
             {
                 $this->workConnection = 1;
+                echo "<br/>-> Успешное подключение<br/>";
                 return $pgsql_conn;
             }
             else
