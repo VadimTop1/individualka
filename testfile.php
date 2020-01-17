@@ -1,5 +1,10 @@
 <?php
-    echo "<br/>->".$_POST['firstName']." ". $_POST['secondName'] . " " . $_POST['thirdName']. " " . $_POST['age'];
+    //echo "<br/>->".$_POST['firstName']." ". $_POST['secondName'] . " " . $_POST['thirdName']. " " . $_POST['age'];
+    if ($_POST) {
+        echo '<pre>';
+        echo htmlspecialchars(print_r($_POST, true));
+        echo '</pre>';
+    }
 ?>
 
 <form action="" method="POST">
