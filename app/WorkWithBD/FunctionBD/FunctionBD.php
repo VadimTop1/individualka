@@ -125,8 +125,8 @@ abstract class FunctionBD
             while ($line = pg_fetch_array($result, null, PGSQL_ASSOC)) {
                 //var_dump($line);
                 $newClassName = $arrObj->get_NameClass();
-                echo "<br/>" . $arrObj->get_NameClass();
-                echo "<br/>" . $newClassName;
+                //echo "<br/>" . $arrObj->get_NameClass();
+                //echo "<br/>" . $newClassName;
 
                 $controller = new $newClassName;
                 echo "<br/>" .$controller->get_NameTable();
@@ -137,6 +137,7 @@ abstract class FunctionBD
                     $controller->$arrMethod($line[$i]);
                 }
                 array_push($resultArrObj, $controller);
+                var_dump($controller);
                 //$newMethod = 
                 //foreach ($line as $col_value) {
                 //    echo "<br/>".$col_value;
