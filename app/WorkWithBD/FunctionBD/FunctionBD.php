@@ -49,8 +49,9 @@ abstract class FunctionBD
         if($arrObj instanceof InterfaceTables)
         {
             $queryStr = "CREATE TABLE ".$arrObj->get_NameTable()."(";//."(Id SERIAL PRIMARY KEY, FirstName CHARACTER VARYING(30), LastName CHARACTER VARYING(30),Email CHARACTER VARYING(30),Age INTEGER);";
-            foreach($arrObj->get_GreqteQuery() as $value)
-                $queryStr .= $value;   
+            foreach($arrObj->get_GreqteQuery() as $newArr)
+                foreach($newArr as $value)
+                    $queryStr .= $value;   
             $queryStr .= ")";
             echo "<br/>----> Создание таблицы, запрос: ". $queryStr;
 
@@ -118,8 +119,16 @@ abstract class FunctionBD
             //var_dump($this->get_pgsql());
             $result = pg_query($this->get_pgsql(),$queryInsp) or die('Ошибка запроса: ' . pg_last_error());
 
+            $resultArrObj = [];
+
             while ($line = pg_fetch_array($result, null, PGSQL_ASSOC)) {
-                var_dump($line);
+                //var_dump($line);
+                $newClassName = $arrObj->get_NameClass();
+                foreach($arrObj->get_GreqteQuery() as $newArr)
+                {
+                    echo "<br/>".$newArr[0];
+                }
+                //$newMethod = 
                 //foreach ($line as $col_value) {
                 //    echo "<br/>".$col_value;
                 //}

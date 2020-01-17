@@ -27,13 +27,17 @@ class Table1 implements InterfaceTables
     {
         //$array = array("firstName", "secondName", "thirdName", "age");
         return [
-            "id SERIAL PRIMARY KEY,",
-            "firstName CHARACTER VARYING(30),",
-            "secondName CHARACTER VARYING(30),",
-            "thirdName CHARACTER VARYING(30),",
-            "age INTEGER"
+            ["id"," SERIAL PRIMARY KEY,"],
+            ["firstName"," CHARACTER VARYING(30),"],
+            ["secondName"," CHARACTER VARYING(30),"],
+            ["thirdName"," CHARACTER VARYING(30),"],
+            ["age"," INTEGER"]
         ];
     } 
+    static public function get_NameClass()
+    {
+        return Table1::class;
+    }
     
     /**
      * @return string
