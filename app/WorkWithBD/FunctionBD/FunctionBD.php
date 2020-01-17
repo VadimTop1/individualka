@@ -118,16 +118,11 @@ abstract class FunctionBD
             //var_dump($this->get_pgsql());
             $result = pg_query($this->get_pgsql(),$queryInsp) or die('Ошибка запроса: ' . pg_last_error());
 
-            // Вывод результатов в HTML
-            echo "<br/><table>\n";
             while ($line = pg_fetch_array($result, null, PGSQL_ASSOC)) {
-                echo "\t<tr>\n";
                 foreach ($line as $col_value) {
-                    echo "\t\t<td>$col_value</td>\n";
+                    echo "<br/>$col_value";
                 }
-                echo "\t</tr>\n";
             }
-            echo "</table>\n";
         }
         else
             return false;
