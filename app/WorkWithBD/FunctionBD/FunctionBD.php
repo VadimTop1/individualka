@@ -42,8 +42,11 @@ abstract class FunctionBD
         foreach($arrObj->get_GreqteQuery() as $value)
             $queryStr .= $value;   
         $queryStr .= ");";
-        $qu = pg_query($this->get_pgsql(), $queryStr);
+        echo "<br/>-> Создание таблицы, запрос: ". $queryStr;
 
+        $qu = pg_query($this->get_pgsql(), $queryStr);
+        echo "<br/>" . $this->InspTable($arrObj);
+        
         return $this->InspTable($arrObj);
     }
 
