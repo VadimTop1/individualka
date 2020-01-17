@@ -40,9 +40,8 @@ $arrData = [
     21
 ];
 
-echo "<br/><br/>-> Проверка на добавление: " . $obj_ControllerBD->AddDataTable($obj_Table1,$arrData,1);
-echo "<br/>";
-$obj_ControllerBD->aa($obj_Table1);
+//echo "<br/><br/>-> Проверка на добавление: " . $obj_ControllerBD->AddDataTable($obj_Table1,$arrData,1);
+//$obj_ControllerBD->aa($obj_Table1);
 
 echo "<br/><br/>-> Проверка на вывод: " . $obj_ControllerBD->OutPutDataTable($obj_Table1);
 

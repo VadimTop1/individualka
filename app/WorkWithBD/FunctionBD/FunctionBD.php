@@ -98,10 +98,14 @@ abstract class FunctionBD
     //Вывод данных из таблицы
     public function OutPutDataTable(&$arrObj) 
     {
+        echo "<br/><br/>-> Проверка интерфейса,перед добавлением: ". $arrObj instanceof InterfaceTables;
+        echo "<br/>";
+        echo "<br/>-> Таблица аргумента: ".$arrObj->get_NameTable()."<br/>";
         if($arrObj instanceof InterfaceTables)
         {
             $queryInsp = "SELECT * FROM ".$arrObj->get_NameTable();
             $arrObj = pg_fetch_object($queryInsp);
+            var_dump($arrObj);
         }
         else
             return false;
