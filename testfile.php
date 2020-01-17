@@ -1,15 +1,15 @@
 <?php
-    echo "<br/>->".$_GET['firstName']." ". $_GET['secondName'] . " " . $_GET['thirdName']. " " . $_GET['age'];
+   
     
 ?>
 
-<form action="" method="GET">
+<form action="update.php" method="post">
     <p><b>Ваше Имя:</b><br>
-    <input type="firstName" size="30">
+    <input type="secondname" size="30">
     <p><b>Ваше Фамилия:</b><br>
-    <input type="secondName" size="30">
+    <input type="secondname" size="30">
     <p><b>Ваше Очество:</b><br>
-    <input type="thirdName" size="30">
+    <input type="thirdname" size="30">
     <p><b>Сколько лет:</b><br>
     <input type="age" size="3">
     <br/><br/>
