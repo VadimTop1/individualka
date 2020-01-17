@@ -43,16 +43,17 @@ abstract class FunctionBD
 
     public function CreteTable($arrObj) 
     {
+        echo "<br/>-> Проверка интерфейса,перед добавлением: ". $arrObj instanceof InterfaceTables;
         if($arrObj instanceof InterfaceTables)
         {
             $queryStr = "CREATE TABLE ".$arrObj->get_NameTable()."(";//."(Id SERIAL PRIMARY KEY, FirstName CHARACTER VARYING(30), LastName CHARACTER VARYING(30),Email CHARACTER VARYING(30),Age INTEGER);";
             foreach($arrObj->get_GreqteQuery() as $value)
                 $queryStr .= $value;   
             $queryStr .= ");";
-            echo "<br/>-> Создание таблицы, запрос: ". $queryStr;
+            echo "<br/><br/>-> Создание таблицы, запрос: ". $queryStr;
 
             $qu = pg_query($this->get_pgsql(), $queryStr);
-            echo "<br/>" . $this->InspTable($arrObj);
+            echo "<br/><br/>-> Проверка создания таблицы: " . $this->InspTable($arrObj);
 
             return $this->InspTable($arrObj);
         }
@@ -63,7 +64,7 @@ abstract class FunctionBD
     //Добавить данные в таблицу
     public function AddDataTable($arrObj, array $arrData, int $activateId) 
     {
-        echo "<br/>-> Проверка интерфейса,перед добавлением: ". $arrObj instanceof InterfaceTables;
+        echo "<br/><br/>-> Проверка интерфейса,перед добавлением: ". $arrObj instanceof InterfaceTables;
         if($arrObj instanceof InterfaceTables)
         {
             $queryInsp = "SELECT count(*) FROM ".$arrObj->get_NameTable();
@@ -80,7 +81,7 @@ abstract class FunctionBD
             }
             $queryStr = substr($queryStr, 0, -1);
             $queryStr .= ");";
-            echo "<br/>-> Добавление строки данных в таблицу, запрос: <br/>----> ". $queryStr;
+            echo "<br/><br/>-> Добавление строки данных в таблицу, запрос: <br/>----> ". $queryStr;
             $qu = pg_query($this->get_pgsql(), $queryStr);
 
             $queryInsp = "SELECT count(*) FROM ".$arrObj->get_NameTable();
@@ -109,12 +110,13 @@ abstract class FunctionBD
     public function aa($arrObj)
     {
         echo "<br/>-> Проверка интерфейса,перед добавлением: ". $arrObj instanceof InterfaceTables;
-        echo "<br/>-> Таблица аргумента: ".$arrObj->get_NameTable();
+        echo "<br/>";
+        echo "<br/>-> Таблица аргумента: ".$arrObj->get_NameTable()."<br/>";
         if($arrObj instanceof InterfaceTables)
         {
             echo "<br/>-> Вывод всех таблиц: ";
             $queryStr = "SELECT * FROM pg_catalog.pg_tables;";
-            echo "<br/>-> Вывод всех таблиц:";
+            
             $result = pg_query($this->get_pgsql(), $queryStr);
             foreach( $result as $value)
                 echo "<br/>----> " . $value;
