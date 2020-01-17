@@ -119,7 +119,7 @@ abstract class FunctionBD
             //var_dump($this->get_pgsql());
             $result = pg_query($this->get_pgsql(),$queryInsp) or die('Ошибка запроса: ' . pg_last_error());
 
-            $resultArrObj = [];
+            $resultArrObj = array();
            // $useName = $arrObj->get_NameClass();
 
             while ($line = pg_fetch_array($result, null, PGSQL_ASSOC)) {
@@ -134,6 +134,7 @@ abstract class FunctionBD
                 for($i = 0; $i < count($line); $i++)
                 {
                     $arrMethod = "set_".$arrObj->get_GreqteQuery[$i][0];
+                    echo "<br/>" . $arrMethod;
                     $controller->$arrMethod($line[$i]);
                 }
                 array_push($resultArrObj, $controller);
