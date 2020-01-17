@@ -19,6 +19,7 @@ spl_autoload_register(function ($name)
 
 use WorkWithBD\ClassBD\Table1\Table1;
 use WorkWithBD\ControllerBD\ControllerBD;
+use src\Param\Param;
 
 echo "-> Индивидуальная работа <br/>";
 
@@ -58,13 +59,14 @@ if($obj_ControllerBD->OutPutDataTable($obj_Table1) == false)
     echo "<br/><br/>-> Не удалось вывисти данные ";
 else
 {
-    echo "<br/><br/>";
+    Param::$obj_Table1 = $obj_Table1;
+    /*echo "<br/><br/>";
     foreach($obj_Table1 as $value)
     {
         echo $value->get_firstName() . " ";
         echo $value->get_secondName() . " ";
         echo $value->get_age() . "<br/>";
-    }
+    }*/
 }
 
 if($obj_ControllerBD->get_workConnection() != 0)

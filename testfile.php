@@ -1,8 +1,16 @@
 <?php
-    //
-    if( isset( $_POST['nazvanie_knopki'] ) )
+
+use src\Param\Param;
+
+if( isset( $_POST['nazvanie_knopki'] ) )
     {
-        
+        echo "<br/><br/>";
+        foreach(Param::$obj_Table1 as $value)
+        {
+            echo $value->get_firstName() . " ";
+            echo $value->get_secondName() . " ";
+            echo $value->get_age() . "<br/>";
+        }
     }
 ?>
 
