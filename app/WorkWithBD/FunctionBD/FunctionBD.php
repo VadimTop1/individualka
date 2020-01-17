@@ -53,6 +53,10 @@ abstract class FunctionBD
             $queryStr .= ")";
             echo "<br/><br/>-> Создание таблицы, запрос: ". $queryStr;
 
+            //Удаление данных из таблицы
+            $queryDrop = "DROP TABLE ". $arrObj->get_NameTable();
+            pg_query($this->get_pgsql(), $queryDrop);
+
             $qu = pg_query($this->get_pgsql(), $queryStr);
 
             echo "<br/>----> Вывод результат: <br/>";
