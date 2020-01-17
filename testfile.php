@@ -5,10 +5,10 @@ include "index.php";
 if( isset( $_POST['nazvanie_knopki'] ) )
 {
     $arrData = [
-        "'".$_POST['firstName']."'",
-        "'".$_POST['secondName']."'",
-        "'".$_POST['thirdName']."'",
-        "'".$_POST['age']."'"
+        "'".(string)$_POST['firstName']."'",
+        "'".(string)$_POST['secondName']."'",
+        "'".(string)$_POST['thirdName']."'",
+        (int)$_POST['age']
     ];
     echo $arrData[0]." ". $arrData[1] . " " . $arrData[2]. " " . $arrData[3];
     if($obj_ControllerBD->AddDataTable($obj_Table1,$arrData) != false)
