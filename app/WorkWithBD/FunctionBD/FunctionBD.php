@@ -72,12 +72,12 @@ abstract class FunctionBD
         echo "<br/><br/>-> Проверка интерфейса,перед добавлением: ". $arrObj instanceof InterfaceTables;
         if($arrObj instanceof InterfaceTables)
         {
-            $queryStr = "INSERT INTO ".$arrObj->get_NameTable()." VALUES (";
+            $queryStr = "INSERT INTO ".$arrObj->get_NameTable()."(firstName, secondName, thirdName, age) VALUES (";
             $i = $activateId;
             foreach($arrData as $value)
             {
                 if($i != 0)
-                    $queryStr .= $value . ",";
+                    $queryStr .= "'".$value . "',";
                 else
                     $i--;
             }

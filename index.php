@@ -33,14 +33,13 @@ $obj_Table1 = new Table1;
 $obj_ControllerBD->CreteTable($obj_Table1);
 
 $arrData = [
-    1,
     "Волковский",
     "Вадим",
     "Сергеевич",
     21
 ];
  var_dump($obj_Table1);
-echo "<br/><br/>-> Проверка на добавление: " . $obj_ControllerBD->AddDataTable($obj_Table1,$arrData,1);
+echo "<br/><br/>-> Проверка на добавление: " . $obj_ControllerBD->AddDataTable($obj_Table1,$arrData,0);
 //$obj_ControllerBD->aa($obj_Table1);
 
 echo "<br/><br/>-> Проверка на вывод: " . $obj_ControllerBD->OutPutDataTable($obj_Table1);
