@@ -131,13 +131,21 @@ abstract class FunctionBD
                 $controller = new $newClassName;
                 echo "<br/>" .$controller->get_NameTable();
                 //count($a)
-                for($i = 0; $i < count($line); $i++)
-                {
+                $i = 0;
+                foreach ($line as $col_value) {
+                    //echo "<br/>".$col_value;
                     $arrMethod = "set_".$arrObj->get_GreqteQuery()[$i][0];
-                    echo "<br/>" . $arrMethod;
-                    echo "<br/>->" . $line[0];
-                    $controller->$arrMethod($line[$i]);
+                    $controller->$arrMethod($col_value);
+                    $i++;
                 }
+                array_push($resultArrObj, $controller);
+                //for($i = 0; $i < count($line); $i++)
+               // {
+                //    $arrMethod = "set_".$arrObj->get_GreqteQuery()[$i][0];
+                //    echo "<br/>" . $arrMethod;
+                //    //echo "<br/>->" . $line[0];
+                //    $controller->$arrMethod($line[$i]);
+                //}
                 //array_push($resultArrObj, $controller);
                 //var_dump($controller);
                 //$newMethod = 
