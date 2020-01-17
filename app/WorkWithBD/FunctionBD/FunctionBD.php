@@ -75,10 +75,10 @@ abstract class FunctionBD
     }
 
     //Вывод данных из таблицы
-    public function OutPutDataTable(InterfaceTables &$arrObj) 
+    public function OutPutDataTable(InterfaceTables $arrObj) 
     {
         $queryInsp = "SELECT * FROM ".$arrObj->get_NameTable();
-        $arrObj = pg_fetch_object($queryInsp);
+        return pg_fetch_object($queryInsp);
     }
 }
 ?>

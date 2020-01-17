@@ -41,7 +41,8 @@ $arrData = [
 ];
 
 $obj_ControllerBD->AddDataTable($obj_Table1,$arrData,1);
-$obj_ControllerBD->OutPutDataTable($obj_Table1);
+$obj_Table1 = $obj_ControllerBD->OutPutDataTable($obj_Table1);
+
 foreach($obj_Table1 as $value)
 {
     echo $value->get_firstName() . " ";
