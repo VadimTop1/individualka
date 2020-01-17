@@ -129,7 +129,7 @@ abstract class FunctionBD
                 //echo "<br/>" . $newClassName;
 
                 $controller = new $newClassName;
-                echo "<br/>" .$controller->get_NameTable();
+                //echo "<br/>" .$controller->get_NameTable();
                 //count($a)
                 $i = 0;
                 foreach ($line as $col_value) {
@@ -153,8 +153,8 @@ abstract class FunctionBD
                 //    echo "<br/>".$col_value;
                 //}
             }
-
-            var_dump($resultArrObj);
+            $arrObj =  $resultArrObj;
+            //var_dump($resultArrObj);
         }
         else
             return false;
