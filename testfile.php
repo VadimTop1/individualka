@@ -1,13 +1,9 @@
 <?php
-    //echo "<br/>->".$_POST['firstName']." ". $_POST['secondName'] . " " . $_POST['thirdName']. " " . $_POST['age'];
-    if ($_POST) {
-        echo '<pre>';
-        echo htmlspecialchars(print_r($_POST, true));
-        echo '</pre>';
-    }
+    echo "<br/>->".$_GET['firstName']." ". $_GET['secondName'] . " " . $_GET['thirdName']. " " . $_GET['age'];
+    
 ?>
 
-<form action="" method="POST">
+<form action="" method="GET">
     <p><b>Ваше Имя:</b><br>
     <input type="firstName" size="30">
     <p><b>Ваше Фамилия:</b><br>
