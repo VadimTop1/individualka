@@ -54,7 +54,7 @@ if($obj_ControllerBD->AddDataTable($obj_Table1,$arrData2) != false)
 else
     echo "<br/><br/>-> Не удалось добавить ";
 
-/*if($obj_ControllerBD->OutPutDataTable($obj_Table1) == false)
+if($obj_ControllerBD->OutPutDataTable($obj_Table1) == false)
     echo "<br/><br/>-> Не удалось вывисти данные ";
 else
 {
@@ -65,7 +65,7 @@ else
         echo $value->get_secondName() . " ";
         echo $value->get_age() . "<br/>";
     }
-}*/
+}
 
 if($obj_ControllerBD->get_workConnection() != 0)
     $obj_ControllerBD->Disconnection();
