@@ -72,7 +72,8 @@ abstract class FunctionBD
         echo "<br/><br/>-> Проверка интерфейса,перед добавлением: ". $arrObj instanceof InterfaceTables;
         if($arrObj instanceof InterfaceTables)
         {
-            $queryStr = "INSERT INTO ".$arrObj->get_NameTable()."(secondName, firstName, thirdName, age) VALUES (";
+            //(secondName, firstName, thirdName, age)
+            $queryStr = "INSERT INTO ".$arrObj->get_NameTable()." VALUES (";
             //$i = $activateId;
             foreach($arrData as $value)
             {
