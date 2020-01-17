@@ -3,7 +3,7 @@ namespace WorkWithBD\ClassBD\Table1;
 
 use  WorkWithBD\InterfacesBD\InterfaceTables\InterfaceTables;
 
-class Table1 //implements InterfaceTables
+class Table1 implements InterfaceTables
 {
     /** @var int */
     protected $id;
@@ -48,7 +48,7 @@ class Table1 //implements InterfaceTables
      * @param int $_id
      * @return int
      **/
-    public function set_id(string $_id)
+    public function set_id(int $_id)
     {
         $this->id = $_id;
     }
