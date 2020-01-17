@@ -134,6 +134,7 @@ abstract class FunctionBD
                 for($i = 0; $i < count($line); $i++)
                 {
                     $arrMethod = "set_".$arrObj->get_GreqteQuery()[$i][0];
+                    echo "<br/>" . $arrMethod;
                     $controller->$arrMethod($line[$i]);
                 }
                 array_push($resultArrObj, $controller);
