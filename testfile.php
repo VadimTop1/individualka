@@ -17,6 +17,6 @@
     <input type="text" size="30">
     <p><b>Сколько лет:</b><br>
     <input type="text" size="3">
-
+    <br/>
     <input type="submit" name="nazvanie_knopki" value="Нажмите" />
 </form>
