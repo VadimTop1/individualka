@@ -114,9 +114,9 @@ abstract class FunctionBD
         echo "<br/>-> Таблица аргумента: ".$arrObj->get_NameTable()."<br/>";
         if($arrObj instanceof InterfaceTables)
         {
-            echo "<br/>-> Вывод всех таблиц: ";
-            $queryStr = "SELECT * FROM pg_catalog.pg_tables;";
-            
+            echo "<br/>-> Проверка на наличии таблицы: ";
+            $queryStr = "SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME=\' " .$arrObj->get_NameTable(). "'";
+            echo "<br/>----> Запрос: " .$queryStr;
             $result = pg_query($this->get_pgsql(), $queryStr);
             echo "<br/>---->".$result;// as $value)
                 //echo "<br/>----> " . $value;
