@@ -124,15 +124,21 @@ abstract class FunctionBD
             while ($line = pg_fetch_array($result, null, PGSQL_ASSOC)) {
                 //var_dump($line);
                 $newClassName = $arrObj->get_NameClass();
-                foreach($arrObj->get_GreqteQuery() as $newArr)
+                $controller = new $newClassName();
+                //count($a)
+                for($i = 0; $i < count($line); $i++)
                 {
-                    echo "<br/>".$newArr[0];
+                    $arrMethod = "set_".$arrObj->get_GreqteQuery[$i][0];
+                    $controller->$arrMethod($line[$i]);
                 }
+                array_push($resultArrObj, $controller);
                 //$newMethod = 
                 //foreach ($line as $col_value) {
                 //    echo "<br/>".$col_value;
                 //}
             }
+
+            var_dump($resultArrObj);
         }
         else
             return false;
