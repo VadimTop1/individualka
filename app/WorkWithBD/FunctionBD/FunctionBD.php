@@ -25,7 +25,7 @@ abstract class FunctionBD
         //$qu = pg_query($db_conn, "SELECT * FROM books ORDER BY author");
         //$data = pg_fetch_object($qu)
     }
-    //Создание таблицы
+    
     public function InspTable($arrObj)
     {
         if($arrObj instanceof InterfaceTables)
@@ -41,24 +41,22 @@ abstract class FunctionBD
             return false;
     }
 
+    //Создание таблицы
     public function CreteTable($arrObj) 
     {
-        echo "<br/>-> Проверка интерфейса,перед добавлением: ". $arrObj instanceof InterfaceTables;
+        echo "<br/>-> Проверка интерфейса,перед созданием: ". $arrObj instanceof InterfaceTables;
         if($arrObj instanceof InterfaceTables)
         {
             $queryStr = "CREATE TABLE ".$arrObj->get_NameTable()."(";//."(Id SERIAL PRIMARY KEY, FirstName CHARACTER VARYING(30), LastName CHARACTER VARYING(30),Email CHARACTER VARYING(30),Age INTEGER);";
             foreach($arrObj->get_GreqteQuery() as $value)
                 $queryStr .= $value;   
-            $queryStr .= ");";
+            $queryStr .= ")";
             echo "<br/><br/>-> Создание таблицы, запрос: ". $queryStr;
 
             $qu = pg_query($this->get_pgsql(), $queryStr);
-            echo "<br/><br/>-> Проверка создания таблицы: " . $this->InspTable($arrObj);
 
             echo "<br/>----> Вывод результат: <br/>";
             var_dump($qu);
-
-            return $this->InspTable($arrObj);
         }
         else
             return false;
@@ -70,9 +68,6 @@ abstract class FunctionBD
         echo "<br/><br/>-> Проверка интерфейса,перед добавлением: ". $arrObj instanceof InterfaceTables;
         if($arrObj instanceof InterfaceTables)
         {
-            $queryInsp = "SELECT count(*) FROM ".$arrObj->get_NameTable();
-            $resultInspOld = pg_query($this->get_pgsql(), $queryInsp);
-
             $queryStr = "INSERT INTO ".$arrObj->get_NameTable()." VALUES (";
             $i = $activateId;
             foreach($arrData as $value)
@@ -88,12 +83,6 @@ abstract class FunctionBD
             $qu = pg_query($this->get_pgsql(), $queryStr);
             echo "<br/>----> Вывод результат: <br/>";
             var_dump($qu);
-            $queryInsp = "SELECT count(*) FROM ".$arrObj->get_NameTable();
-            $resultInspNew = pg_query($this->get_pgsql(), $queryInsp);
-            if($resultInspOld < $resultInspNew)
-                return true;
-            else
-                return false;
         }
         else
             return false;
