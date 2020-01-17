@@ -44,9 +44,8 @@ $arrData2 = [
     "'Монитор'",
     23
 ];
- //var_dump($obj_Table1);
 if($obj_ControllerBD->AddDataTable($obj_Table1,$arrData) != false)
-    echo "<br/><br/>-> Успешно добавленно ";
+    echo "<br/>-> Успешно добавленно ";
 else
     echo "<br/><br/>-> Не удалось добавить ";
 
@@ -59,7 +58,7 @@ if($obj_ControllerBD->OutPutDataTable($obj_Table1) == false)
     echo "<br/><br/>-> Не удалось вывисти данные ";
 else
 {
-    echo "<br/>";
+    echo "<br/><br/>";
     foreach($obj_Table1 as $value)
     {
         echo $value->get_firstName() . " ";
