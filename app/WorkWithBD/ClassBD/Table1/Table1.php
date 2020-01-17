@@ -3,7 +3,7 @@ namespace WorkWithBD\ClassBD\Table1;
 
 use  WorkWithBD\InterfacesBD\InterfaceTables\InterfaceTables;
 
-class Table1 implements InterfaceTables
+class Table1 //implements InterfaceTables
 {
     /** @var int */
     protected $id;
