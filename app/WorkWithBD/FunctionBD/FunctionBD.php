@@ -105,7 +105,8 @@ abstract class FunctionBD
         {
             $queryInsp = "SELECT * FROM ".$arrObj->get_NameTable();
             echo "<br/>----> Запрос: " .$queryInsp;
-            $qu = pg_query($this->get_pgsql(), $queryInsp);
+            //$qu = pg_query($this->get_pgsql(), $queryInsp);
+            $result = pg_query_params($this->get_pgsql(), 'SELECT * FROM Test1');
             
             echo"<br/>----> Вывод чистой функции:<br/>";
             $arrObj = pg_fetch_object($qu);
