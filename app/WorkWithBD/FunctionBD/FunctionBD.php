@@ -51,7 +51,7 @@ abstract class FunctionBD
             foreach($arrObj->get_GreqteQuery() as $value)
                 $queryStr .= $value;   
             $queryStr .= ")";
-            echo "<br/><br/>-> Создание таблицы, запрос: ". $queryStr;
+            echo "<br/>----> Создание таблицы, запрос: ". $queryStr;
 
             //Удаление данных из таблицы
             $queryDrop = "DROP TABLE ". $arrObj->get_NameTable();
@@ -78,7 +78,7 @@ abstract class FunctionBD
                 $queryStr .= $value . ",";
             $queryStr = substr($queryStr, 0, -1);
             $queryStr .= ")";
-            echo "<br/><br/>-> Добавление строки данных в таблицу, запрос: <br/>----> ". $queryStr;
+            echo "<br/>----> Добавление строки данных в таблицу, запрос: <br/>----> ". $queryStr;
             $qu = pg_query($this->get_pgsql(), $queryStr);
             echo "<br/>----> Вывод результат: <br/>";
             var_dump($qu);
@@ -91,18 +91,25 @@ abstract class FunctionBD
     public function OutPutDataTable(&$arrObj) 
     {
         echo "<br/><br/>-> Проверка интерфейса,перед выводом: ". $arrObj instanceof InterfaceTables;
-        echo "<br/>";
-        echo "<br/>-> Таблица аргумента: ".$arrObj->get_NameTable()."<br/>";
+        echo "<br/>----> Таблица аргумента: ".$arrObj->get_NameTable()."<br/>";
         if($arrObj instanceof InterfaceTables)
         {
             $queryInsp = "SELECT * FROM ".$arrObj->get_NameTable();
             echo "<br/>----> Запрос: " .$queryInsp;
-            //$qu = pg_query($this->get_pgsql(), $queryInsp);
-            $result = pg_query_params($this->get_pgsql(), 'SELECT * FROM Test1');
+            $qu = pg_query($this->get_pgsql(), $queryInsp) or die('Ошибка запроса: ' . pg_last_error());
+            $row = 0;
+            //$result = pg_query_params($this->get_pgsql(), 'SELECT * FROM Test1');
             
-            echo"<br/>----> Вывод чистой функции:<br/>";
-            $arrObj = pg_fetch_object($result);
-            var_dump(pg_fetch_object($result));
+            //echo"<br/>----> Вывод чистой функции:<br/>";
+            //$arrObj = pg_fetch_object($qu);
+            while ($arrObj = pg_fetch_object($qu, $row)) {
+                echo $arrObj->get_firstName()." ";
+                echo $arrObj->get_secondName() ." ";
+                echo $arrObj->get_thirdName() ." [ ";
+                echo $arrObj->get_age()." ]<BR/>";
+                $row++;
+                }
+            //var_dump(pg_fetch_object($qu));
 
             echo "<br/>----> Вывод массива: <br/>";
             var_dump($arrObj);
