@@ -7,7 +7,8 @@ if($obj_ControllerBD->OutPutDataTable($obj_Table1) == false)
     echo "<br/><br/>-> Не удалось вывисти данные ";
 else
 {
-    echo '<table border="1">
+    echo '<br/><br/>
+          <table border="1">
             <caption>Таблица размеров обуви</caption>
             <tr>
                 <th>Id</th>
