@@ -42,7 +42,7 @@ $arrData = [
 
 echo "<br/><br/>-> Добавление: " . $obj_ControllerBD->AddDataTable($obj_Table1,$arrData,1);
 echo "<br/>";
-$obj_ControllerBD->OutPutDataTable($obj_Table1);
+/*$obj_ControllerBD->OutPutDataTable($obj_Table1);
 
 echo "<br/>";
 foreach($obj_Table1 as $value)
@@ -50,7 +50,8 @@ foreach($obj_Table1 as $value)
     echo $value->get_firstName() . " ";
     echo $value->get_secondName() . " ";
     echo $value->get_age() . "<br/>";
-}
+}*/
+
 //use src\test1\test1 as mainTest;
 //use WorkWithBD\ConnectBD\ConnectBD as ConnectDataBase;
 
