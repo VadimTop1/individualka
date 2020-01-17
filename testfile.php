@@ -15,7 +15,7 @@ $obj_ControllerBD = new ControllerBD($host,$dbname,$user,$password);*/
 
 if( isset( $_POST['nazvanie_knopki'] ) )
     {
-        /*$obj_Table1 = new Table1;
+        //$obj_Table1 = new Table1;
 
         if($obj_ControllerBD->OutPutDataTable($obj_Table1) == false)
             echo "<br/><br/>-> Не удалось вывисти данные ";
@@ -29,7 +29,7 @@ if( isset( $_POST['nazvanie_knopki'] ) )
                 echo $value->get_secondName() . " ";
                 echo $value->get_age() . "<br/>";
             }
-        }*/
+        }
     }
 ?>
 
