@@ -119,9 +119,10 @@ abstract class FunctionBD
             $result = pg_query($this->get_pgsql(),$queryInsp) or die('Ошибка запроса: ' . pg_last_error());
 
             while ($line = pg_fetch_array($result, null, PGSQL_ASSOC)) {
-                foreach ($line as $col_value) {
-                    echo "<br/>$col_value";
-                }
+                echo "<br/>".$line;
+                //foreach ($line as $col_value) {
+                //    echo "<br/>".$col_value;
+                //}
             }
         }
         else
