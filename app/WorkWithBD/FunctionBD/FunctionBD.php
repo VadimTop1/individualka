@@ -104,8 +104,11 @@ abstract class FunctionBD
         if($arrObj instanceof InterfaceTables)
         {
             $queryInsp = "SELECT * FROM ".$arrObj->get_NameTable();
-            echo "<br/>----> Запрос: " .$queryInsp;
+            echo "<br/>----> Запрос: " .$queryInsp."<br/>";
             $arrObj = pg_fetch_object($queryInsp);
+            
+            var_dump(pg_fetch_object($queryInsp));
+            echo "<br/>";
             var_dump($arrObj);
         }
         else
