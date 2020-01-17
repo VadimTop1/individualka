@@ -120,6 +120,7 @@ abstract class FunctionBD
             $result = pg_query($this->get_pgsql(),$queryInsp) or die('Ошибка запроса: ' . pg_last_error());
 
             $resultArrObj = [];
+           // $useName = $arrObj->get_NameClass();
 
             while ($line = pg_fetch_array($result, null, PGSQL_ASSOC)) {
                 //var_dump($line);
@@ -127,7 +128,8 @@ abstract class FunctionBD
                 echo "<br/>" . $arrObj->get_NameClass();
                 echo "<br/>" . $newClassName;
 
-                $controller = new $arrObj->get_NameClass();
+                $controller = new $newClassName;
+                echo "<br/>" .$controller->get_NameTable();
                 //count($a)
                 for($i = 0; $i < count($line); $i++)
                 {
