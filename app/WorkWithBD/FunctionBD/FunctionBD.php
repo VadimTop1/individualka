@@ -55,6 +55,9 @@ abstract class FunctionBD
             $qu = pg_query($this->get_pgsql(), $queryStr);
             echo "<br/><br/>-> Проверка создания таблицы: " . $this->InspTable($arrObj);
 
+            echo "<br/>----> Вывод результат: <br/>";
+            var_dump($qu);
+
             return $this->InspTable($arrObj);
         }
         else
