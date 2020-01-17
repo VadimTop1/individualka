@@ -102,19 +102,31 @@ abstract class FunctionBD
             //echo"<br/>----> Вывод чистой функции:<br/>";
             //$arrObj = pg_fetch_object($qu);
             echo "<br/>----><br/>";
-            while ($arrObj = pg_fetch_object($qu)) {
-                echo $arrObj->get_firstName()." ";
-                echo $arrObj->get_secondName() ." ";
-                echo $arrObj->get_thirdName() ." [ ";
-                echo $arrObj->get_age()." ]<BR/>";
+            while ($data  = pg_fetch_object($qu)) {
+                echo $data ->get_firstName()." ";
+                echo $data ->get_secondName() ." ";
+                echo $data ->get_thirdName() ." [ ";
+                echo $data ->get_age()." ]<BR/>";
                 }
             //var_dump(pg_fetch_object($qu));
 
             echo "<br/>----> Вывод массива: <br/>";
             var_dump($arrObj);
-            echo "<br/>----> просто проверка ресурса: <br/>";
-            var_dump($this->get_pgsql());
 
+            echo "<br/>----> Просто проверка вывода в виде массива: <br/>";
+            //var_dump($this->get_pgsql());
+            $result = pg_query($this->get_pgsql(),$queryInsp) or die('Ошибка запроса: ' . pg_last_error());
+
+            // Вывод результатов в HTML
+            echo "<br/><table>\n";
+            while ($line = pg_fetch_array($result, null, PGSQL_ASSOC)) {
+                echo "\t<tr>\n";
+                foreach ($line as $col_value) {
+                    echo "\t\t<td>$col_value</td>\n";
+                }
+                echo "\t</tr>\n";
+            }
+            echo "</table>\n";
         }
         else
             return false;

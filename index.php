@@ -59,6 +59,7 @@ foreach($obj_Table1 as $value)
     echo $value->get_age() . "<br/>";
 }
 
+$obj_ControllerBD->Disconnection();
 //use src\test1\test1 as mainTest;
 //use WorkWithBD\ConnectBD\ConnectBD as ConnectDataBase;
 
