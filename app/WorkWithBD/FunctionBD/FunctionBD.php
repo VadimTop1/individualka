@@ -101,7 +101,7 @@ abstract class FunctionBD
         if($arrObj instanceof InterfaceTables)
         {
             $queryInsp = "SELECT * FROM ".$arrObj->get_NameTable();
-            pg_fetch_object($queryInsp);
+            $arrObj = pg_fetch_object($queryInsp);
         }
         else
             return false;
