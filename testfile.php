@@ -10,6 +10,7 @@ if( isset( $_POST['nazvanie_knopki'] ) )
         "'".$_POST['thirdName']."'",
         "'".$_POST['age']."'"
     ];
+    echo $arrData[0]." ". $arrData[1] . " " . $arrData[2]. " " . $arrData[3];
     if($obj_ControllerBD->AddDataTable($obj_Table1,$arrData) != false)
         echo "<br/>-> Успешно добавленно ";
     else
