@@ -73,14 +73,11 @@ abstract class FunctionBD
         if($arrObj instanceof InterfaceTables)
         {
             //(secondName, firstName, thirdName, age)
-            $queryStr = "INSERT INTO ".$arrObj->get_NameTable()." VALUES (1,";
-            //$i = $activateId;
+            $queryStr = "INSERT INTO ".$arrObj->get_NameTable()." VALUES (";
             foreach($arrData as $value)
-            {
-                $queryStr .= "'".$value . "',";
-            }
+                $queryStr .= $value . ",";
             $queryStr = substr($queryStr, 0, -1);
-            $queryStr .= ");";
+            $queryStr .= ")";
             echo "<br/><br/>-> Добавление строки данных в таблицу, запрос: <br/>----> ". $queryStr;
             $qu = pg_query($this->get_pgsql(), $queryStr);
             echo "<br/>----> Вывод результат: <br/>";
