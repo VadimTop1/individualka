@@ -103,11 +103,11 @@ abstract class FunctionBD
             echo"<br/>----> Вывод чистой объектов:<br/>";
             //$arrObj = pg_fetch_object($qu);
             //echo "<br/>----><br/>";
-            while ($data  = pg_fetch_object($qu,null,Table1::class)) {
-                echo $data ->get_firstName()." ";
-                echo $data ->get_secondName() ." ";
-                echo $data ->get_thirdName() ." [ ";
-                echo $data ->get_age()." ]<BR/>";
+            while ($arrObj  = pg_fetch_object($qu,null,PGSQL_ASSOC)) {
+                echo $arrObj->get_firstName()." ";
+                echo $arrObj->get_secondName() ." ";
+                echo $arrObj->get_thirdName() ." [ ";
+                echo $arrObj->get_age()." ]<BR/>";
                 }
             //var_dump(pg_fetch_object($qu));
 
