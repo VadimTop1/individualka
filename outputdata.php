@@ -21,14 +21,18 @@ if($obj_ControllerBD->OutPutDataTable($obj_Table1) == false)
             echo "<br/><br/>";
             foreach($obj_Table1 as $value)
             {
-                echo $value->get_firstName() . " ";
-                echo $value->get_secondName() . " ";
-                echo $value->get_age() . "<br/>";
+                echo '<tr>';//<td>34,5</td><td>3,5</td><td>36</td><td>23</td><td>23</td></tr>
+                echo '<td>'.$value->get_id().'</td>';
+                echo '<td>'.$value->get_firstName().'</td>';
+                echo '<td>'.$value->get_secondName().'</td>';
+                echo '<td>'.$value->get_thirdName().'</td>';
+                echo '<td>'.$value->get_age().'</td>';
+                echo '</tr>';
             }
         }
 
 ?>
 
 
-   <tr><td>34,5</td><td>3,5</td><td>36</td><td>23</td><td>23</td></tr>
+   
 </table>
