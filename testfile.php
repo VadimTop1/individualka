@@ -1,9 +1,9 @@
 <?php
-    include "index.php";
+    //
     if( isset( $_POST['nazvanie_knopki'] ) )
     {
         
-        echo 'Данные отправлены!';
+        include "index.php";
 
         if($obj_ControllerBD->OutPutDataTable($obj_Table1) == false)
             echo "<br/><br/>-> Не удалось вывисти данные ";
