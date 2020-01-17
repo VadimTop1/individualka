@@ -123,8 +123,8 @@ abstract class FunctionBD
 
             while ($line = pg_fetch_array($result, null, PGSQL_ASSOC)) {
                 //var_dump($line);
-                $newClassName = $arrObj->get_NameClass();
-                $controller = new $newClassName();
+                //$newClassName = $arrObj->get_NameClass();
+                $controller = new $arrObj->get_NameClass();
                 //count($a)
                 for($i = 0; $i < count($line); $i++)
                 {
