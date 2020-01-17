@@ -1,6 +1,7 @@
 <?php
 namespace WorkWithBD\FunctionBD;
 
+use WorkWithBD\ClassBD\Table1\Table1;
 use  WorkWithBD\InterfacesBD\InterfaceTables\InterfaceTables;
 
 abstract class FunctionBD
@@ -99,10 +100,10 @@ abstract class FunctionBD
             $qu = pg_query($this->get_pgsql(), $queryInsp) or die('Ошибка запроса: ' . pg_last_error());
             //$result = pg_query_params($this->get_pgsql(), 'SELECT * FROM Test1');
             
-            //echo"<br/>----> Вывод чистой функции:<br/>";
+            echo"<br/>----> Вывод чистой объектов:<br/>";
             //$arrObj = pg_fetch_object($qu);
             //echo "<br/>----><br/>";
-            while ($data  = pg_fetch_object($qu,null,$arrObj)) {
+            while ($data  = pg_fetch_object($qu,null,Table1::class)) {
                 echo $data ->get_firstName()." ";
                 echo $data ->get_secondName() ." ";
                 echo $data ->get_thirdName() ." [ ";
