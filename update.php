@@ -1,7 +1,7 @@
 <?php
     include "index.php";
     
-    echo "<br/>".$_POST['firstName']." ". $_POST['secondName'] . " " . $_POST['thirdName']. " " . $_POST['age'];
+    echo "<br/>->".$_POST['firstName']." ". $_POST['secondName'] . " " . $_POST['thirdName']. " " . $_POST['age'];
 /*
     if( isset( $_POST['firstName']) && isset($_POST['secondName']) && isset($_POST['thirdName']) && isset($_POST['age']))
     {

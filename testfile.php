@@ -1,8 +1,8 @@
 <?php
-
+    echo "<br/>->".$_POST['firstName']." ". $_POST['secondName'] . " " . $_POST['thirdName']. " " . $_POST['age'];
 ?>
 
-<form action="update.php" method="POST">
+<form action="" method="POST">
     <p><b>Ваше Имя:</b><br>
     <input type="firstName" size="30">
     <p><b>Ваше Фамилия:</b><br>
