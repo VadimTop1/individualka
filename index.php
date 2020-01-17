@@ -45,21 +45,31 @@ $arrData2 = [
     23
 ];
  //var_dump($obj_Table1);
-echo "<br/><br/>-> Проверка на добавление: " . $obj_ControllerBD->AddDataTable($obj_Table1,$arrData);
-echo "<br/><br/>-> Проверка на добавление: " . $obj_ControllerBD->AddDataTable($obj_Table1,$arrData2);
-//$obj_ControllerBD->aa($obj_Table1);
+if($obj_ControllerBD->AddDataTable($obj_Table1,$arrData) != false)
+    echo "<br/><br/>-> Успешно добавленно ";
+else
+    echo "<br/><br/>-> Не удалось добавить ";
 
-echo "<br/><br/>-> Проверка на вывод: " . $obj_ControllerBD->OutPutDataTable($obj_Table1);
+if($obj_ControllerBD->AddDataTable($obj_Table1,$arrData2) != false)
+    echo "<br/><br/>-> Успешно добавленно ";
+else
+    echo "<br/><br/>-> Не удалось добавить ";
 
-echo "<br/>";
-foreach($obj_Table1 as $value)
+if($obj_ControllerBD->OutPutDataTable($obj_Table1) == false)
+    echo "<br/><br/>-> Не удалось вывисти данные ";
+else
 {
-    echo $value->get_firstName() . " ";
-    echo $value->get_secondName() . " ";
-    echo $value->get_age() . "<br/>";
+    echo "<br/>";
+    foreach($obj_Table1 as $value)
+    {
+        echo $value->get_firstName() . " ";
+        echo $value->get_secondName() . " ";
+        echo $value->get_age() . "<br/>";
+    }
 }
 
-$obj_ControllerBD->Disconnection();
+if($obj_ControllerBD->get_workConnection() != 0)
+    $obj_ControllerBD->Disconnection();
 //use src\test1\test1 as mainTest;
 //use WorkWithBD\ConnectBD\ConnectBD as ConnectDataBase;
 

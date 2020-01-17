@@ -21,7 +21,6 @@ abstract class FunctionBD
     //Создание таблицы
     public function CreteTable($arrObj) 
     {
-        echo "<br/>-> Проверка интерфейса,перед созданием: ". $arrObj instanceof InterfaceTables;
         if($arrObj instanceof InterfaceTables)
         {
             $queryStr = "CREATE TABLE ".$arrObj->get_NameTable()."(";//."(Id SERIAL PRIMARY KEY, FirstName CHARACTER VARYING(30), LastName CHARACTER VARYING(30),Email CHARACTER VARYING(30),Age INTEGER);";
