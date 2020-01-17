@@ -105,5 +105,14 @@ abstract class FunctionBD
         else
             return false;
     }
+
+    public function aa($arrObj)
+    {
+        $queryStr = "SELECT * FROM pg_catalog.".$arrObj->get_NameTable().";";
+        echo "<br/>-> Вывод всех таблиц:";
+        $result = pg_query($this->get_pgsql(), $queryStr);
+        foreach( $result as $value)
+            echo "<br/>----> " . $value;
+    }
 }
 ?>
