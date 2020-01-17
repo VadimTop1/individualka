@@ -106,7 +106,7 @@ abstract class FunctionBD
             return false;
     }
 
-    public function aa($arrObj)
+    public function aa()
     {
         echo "<br/>-> Вывод всех таблиц:";
         /*$queryStr = "SELECT * FROM pg_catalog.".$arrObj->get_NameTable().";";
