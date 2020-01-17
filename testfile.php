@@ -2,8 +2,7 @@
 
 include "index.php";
 
-if( isset( $_POST['nazvanie_knopki'] ) && isset($_POST['firstname']) 
-&& isset($_POST['secondName']) && isset($_POST['thirdName']) && isset($_POST['age']) )
+if( isset( $_POST['nazvanie_knopki'] ) )
 {
     $arrData = [
         "'".$_POST['firstname']."'",
@@ -18,7 +17,7 @@ if( isset( $_POST['nazvanie_knopki'] ) && isset($_POST['firstname'])
 }
 ?>
 
-<form action="testfile.php" method="POST">
+<form method="POST">
     <p><b>Ваше Имя:</b><br>
     <input type="firstName" size="30">
     <p><b>Ваше Фамилия:</b><br>
