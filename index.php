@@ -30,7 +30,7 @@ $password="7b7b20b8a7e3719a92a0f789626bfcd89b12e39de5e69bef5e706717a99eab24";
 $obj_ControllerBD = new ControllerBD($host,$dbname,$user,$password);
 $obj_Table1 = new Table1;
 
-$obj_ControllerBD->CreteTable($obj_Table1);
+//$obj_ControllerBD->CreteTable($obj_Table1);
 
 $arrData = [
     1,
@@ -40,9 +40,11 @@ $arrData = [
     21
 ];
 
-$obj_ControllerBD->AddDataTable($obj_Table1,$arrData,1);
+echo "<br/><br/>-> Добавление: " . $obj_ControllerBD->AddDataTable($obj_Table1,$arrData,1);
+echo "<br/>";
 $obj_ControllerBD->OutPutDataTable($obj_Table1);
 
+echo "<br/>";
 foreach($obj_Table1 as $value)
 {
     echo $value->get_firstName() . " ";

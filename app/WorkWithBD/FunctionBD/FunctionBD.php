@@ -63,6 +63,7 @@ abstract class FunctionBD
     //Добавить данные в таблицу
     public function AddDataTable($arrObj, array $arrData, int $activateId) 
     {
+        echo "<br/>-> Проверка интерфейса,перед добавлением: ". $arrObj instanceof InterfaceTables;
         if($arrObj instanceof InterfaceTables)
         {
             $queryInsp = "SELECT count(*) FROM ".$arrObj->get_NameTable();
@@ -79,6 +80,7 @@ abstract class FunctionBD
             }
             $queryStr = substr($queryStr, 0, -1);
             $queryStr .= ");";
+            echo "<br/>-> Добавление строки данных в таблицу, запрос: <br/>----> ". $queryStr;
             $qu = pg_query($this->get_pgsql(), $queryStr);
 
             $queryInsp = "SELECT count(*) FROM ".$arrObj->get_NameTable();
