@@ -38,7 +38,7 @@ $arrData = [
     "Сергеевич",
     21
 ];
- var_dump($obj_Table1);
+ //var_dump($obj_Table1);
 echo "<br/><br/>-> Проверка на добавление: " . $obj_ControllerBD->AddDataTable($obj_Table1,$arrData);
 //$obj_ControllerBD->aa($obj_Table1);
 

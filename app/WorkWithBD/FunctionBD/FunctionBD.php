@@ -73,7 +73,7 @@ abstract class FunctionBD
         if($arrObj instanceof InterfaceTables)
         {
             //(secondName, firstName, thirdName, age)
-            $queryStr = "INSERT INTO ".$arrObj->get_NameTable()." VALUES (";
+            $queryStr = "INSERT INTO ".$arrObj->get_NameTable()." VALUES (1,";
             //$i = $activateId;
             foreach($arrData as $value)
             {
