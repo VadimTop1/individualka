@@ -100,15 +100,15 @@ abstract class FunctionBD
             $qu = pg_query($this->get_pgsql(), $queryInsp) or die('Ошибка запроса: ' . pg_last_error());
             //$result = pg_query_params($this->get_pgsql(), 'SELECT * FROM Test1');
             
-            echo"<br/>----> Вывод чистой объектов:<br/>";
+            //echo"<br/>----> Вывод чистой объектов:<br/>";
             //$arrObj = pg_fetch_object($qu);
             //echo "<br/>----><br/>";
-            while ($arrObj  = pg_fetch_object($qu,null,PGSQL_ASSOC)) {
-                echo $arrObj->get_firstName()." ";
-                echo $arrObj->get_secondName() ." ";
-                echo $arrObj->get_thirdName() ." [ ";
-                echo $arrObj->get_age()." ]<BR/>";
-                }
+            //while ($arrObj  = pg_fetch_object($qu,null,PGSQL_ASSOC)) {
+             //   echo $arrObj->get_firstName()." ";
+             //   echo $arrObj->get_secondName() ." ";
+             //   echo $arrObj->get_thirdName() ." [ ";
+             //   echo $arrObj->get_age()." ]<BR/>";
+            //     }
             //var_dump(pg_fetch_object($qu));
 
             //echo "<br/>----> Вывод массива: <br/>";
