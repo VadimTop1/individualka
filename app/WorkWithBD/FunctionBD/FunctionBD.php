@@ -113,6 +113,9 @@ abstract class FunctionBD
 
             echo "<br/>----> Вывод массива: <br/>";
             var_dump($arrObj);
+            echo "<br/>----> просто проверка ресурса: <br/>";
+            var_dump($this->get_pgsql());
+
         }
         else
             return false;
