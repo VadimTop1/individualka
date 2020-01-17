@@ -1,8 +1,10 @@
 <?php
 
-use WorkWithBD\ClassBD\Table1\Table1;
-use WorkWithBD\ControllerBD\ControllerBD;
-use src\Param\Param;
+include "index.php";
+
+//use WorkWithBD\ClassBD\Table1\Table1;
+//use WorkWithBD\ControllerBD\ControllerBD;
+//use src\Param\Param;
 
 /*$host="ec2-174-129-33-107.compute-1.amazonaws.com";
 $dbname="d2vsnkphe5a3oj";
