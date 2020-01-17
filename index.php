@@ -17,24 +17,37 @@ spl_autoload_register(function ($name)
     require_once $className;
 });
 
+use WorkWithBD\ClassBD\Table1\Table1;
+use WorkWithBD\ControllerBD\ControllerBD;
 
-$res = "Query: ";
-$arr = [
-    "id SERIAL PRIMARY KEY,",
-            "firstName CHARACTER VARYING(30),",
-            "secondName CHARACTER VARYING(30),",
-            "thirdName CHARACTER VARYING(30),",
-            "age INTEGER"
-        
+echo "-> Индивидуальная работа <br/>";
+
+$host="ec2-174-129-33-107.compute-1.amazonaws.com";
+$dbname="d2vsnkphe5a3oj";
+$user="rtokoowoircggm";
+$password="7b7b20b8a7e3719a92a0f789626bfcd89b12e39de5e69bef5e706717a99eab24";
+
+$obj_ControllerBD = new ControllerBD($host,$dbname,$user,$password);
+$obj_Table1 = new Table1;
+
+$obj_ControllerBD->CreteTable($obj_Table1);
+
+$arrData = [
+    1,
+    "Волковский",
+    "Вадим",
+    "Сергеевич",
+    21
 ];
 
-foreach($arr as $value)
+$obj_ControllerBD->AddDataTable($obj_Table1,$arrData,1);
+$obj_ControllerBD->OutPutDataTable($obj_Table1);
+foreach($obj_Table1 as $value)
 {
-    $res .= $value;
+    echo $value->get_firstName() . " ";
+    echo $value->get_secondName() . " ";
+    echo $value->get_age() . "<br/>";
 }
-
-echo $res;
-
 //use src\test1\test1 as mainTest;
 //use WorkWithBD\ConnectBD\ConnectBD as ConnectDataBase;
 

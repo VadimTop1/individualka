@@ -31,7 +31,7 @@ class Table1 implements InterfaceTables
             "firstName CHARACTER VARYING(30),",
             "secondName CHARACTER VARYING(30),",
             "thirdName CHARACTER VARYING(30),",
-            "age INTEGER"
+            "age INTEGER CHECK(age > 0)"
         ];
     } 
     

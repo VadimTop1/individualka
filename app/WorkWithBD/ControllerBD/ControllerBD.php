@@ -29,6 +29,15 @@ final class ControllerBD extends FunctionBD{
         $this->pgsql = self::Connecting();//$this->
     }
 
+    public function Disconnection()
+    {
+        // Очистка результата
+        //pg_free_result($result);
+
+        //Закрытие соединения
+        pg_close($this->pgsql);
+    }
+
 	private function Connecting() 
 	{
         if($this->workConnection == 0)
