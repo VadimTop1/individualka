@@ -38,6 +38,7 @@ abstract class FunctionBD
 
     public function CreteTable(InterfaceTables $arrObj) 
     {
+        echo "<br/>->";
         $queryStr = "CREATE TABLE ".$arrObj->get_NameTable()."(";//."(Id SERIAL PRIMARY KEY, FirstName CHARACTER VARYING(30), LastName CHARACTER VARYING(30),Email CHARACTER VARYING(30),Age INTEGER);";
         foreach($arrObj->get_GreqteQuery() as $value)
             $queryStr .= $value;   
@@ -46,7 +47,7 @@ abstract class FunctionBD
 
         $qu = pg_query($this->get_pgsql(), $queryStr);
         echo "<br/>" . $this->InspTable($arrObj);
-        
+
         return $this->InspTable($arrObj);
     }
 
