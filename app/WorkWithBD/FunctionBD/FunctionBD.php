@@ -73,7 +73,7 @@ abstract class FunctionBD
         if($arrObj instanceof InterfaceTables)
         {
             //(secondName, firstName, thirdName, age)
-            $queryStr = "INSERT INTO ".$arrObj->get_NameTable()." VALUES (";
+            $queryStr = "INSERT INTO ".$arrObj->get_NameTable()." VALUES (secondName, firstName, thirdName, age)";
             foreach($arrData as $value)
                 $queryStr .= $value . ",";
             $queryStr = substr($queryStr, 0, -1);

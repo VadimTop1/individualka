@@ -33,7 +33,6 @@ $obj_Table1 = new Table1;
 $obj_ControllerBD->CreteTable($obj_Table1);
 
 $arrData = [
-    1,
     "'Волковский'",
     "'Вадим'",
     "'Сергеевич'",
