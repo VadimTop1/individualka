@@ -1,5 +1,7 @@
 <?php
     include "index.php";
+    
+    echo "<br/>".$_POST['firstname']." ". $_POST['secondName'] . " " . $_POST['thirdName']. " " . $_POST['age'];
 
     if( isset( $_POST['firstname']) && isset($_POST['secondName']) && isset($_POST['thirdName']) && isset($_POST['age']))
     {
