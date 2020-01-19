@@ -48,7 +48,10 @@ $methodName = $controllerAndAction[1];      //метод
 if($methodName == 'Main')
     $controllerName::$methodName($matches[0]);
 else
+{
+    echo "работает";
     $controllerName::$methodName();
+}
 
 
 /*$obj_ControllerBD->CreteTable($obj_Table1);
