@@ -48,8 +48,10 @@ $methodName = $controllerAndAction[1];      //метод
 //$controllerCreate = new $controllerName();
 //$controllerCreate::$methodName($matches); //(...matches)
 if($methodName == 'Main')
-    $controllerName::$methodName($matches[0]);
-else
+{
+    echo $matches[0];
+    //$controllerName::$methodName($matches[0]);
+}else
     $controllerName::$methodName();
 
 
