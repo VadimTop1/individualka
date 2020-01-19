@@ -33,15 +33,21 @@ echo "<br/>";
 echo "<br/>-> <br/>";
 var_dump($controllerAndAction);
 echo "<br/>";
-echo "<br/>-> <br/>";
-var_dump( explode("/", $matches[0]));
+echo "<br/>";
 
-echo "<br/>";
-echo "<br/>";
 
 $param = explode("/", $matches[0]);
+echo $param ;
+echo "<br/>";
+
 $controllerName = $controllerAndAction[0];  //класс
 $methodName = $controllerAndAction[1];      //метод
+
+echo "<br/>-> ". $controllerName;
+echo "<br/>-> ". $methodName;
+
+echo "<br/>";
+
 
 $controllerCreate = new $controllerName();
 $controllerCreate->$methodName($param); //(...matches)
