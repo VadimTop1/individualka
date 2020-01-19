@@ -6,6 +6,7 @@
         //'~^Page/(.*)$~' => [\Project\Controllers\MainController::class, 'sayHello'],
         //'~^page/(.*)$~' => [Controllers\ControllerP1::class, 'Show'],
         '~^page/(.*)$~' => [ControllerP1::class, 'Main'],
+        //asd
         '~^page/addInfom$~' => [ControlerOutput::class, 'Add'],
         '~^page/showInfom$~' => [ControlerOutput::class, 'Show']
         //'~^test$~' => 
