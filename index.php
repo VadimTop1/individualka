@@ -17,6 +17,22 @@ spl_autoload_register(function ($name)
     require_once $className;
 });
 
+$routeArr = [
+    //'~^Page/(.*)$~' => [\Project\Controllers\MainController::class, 'sayHello'],
+//'~^page/(.*)$~' => [\Project\Controllers\ControllerMain::class, 'distributeUrl'],
+    //'~^test$~' => 
+    //'~^users/authorization~' => [\Project\Controllers\ControllerMain::class, 'distributeUrl'],
+//'~^(.*)$~' => [\Project\Controllers\ControllerMain::class, 'distributeUrl']
+    //'~^authorization$~' => [\Project\Controllers\ControllerMain::class, 'distributeUrl']
+];
+
+$route = $_GET['route'] ?? '';
+echo $route;
+echo "<br/>";
+echo "<br/>";
+
+
+
 use WorkWithBD\ClassBD\Table1\Table1;
 use WorkWithBD\ControllerBD\ControllerBD;
 use src\Param\Param;
