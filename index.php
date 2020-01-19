@@ -34,7 +34,10 @@ echo "<br/>-> <br/>";
 var_dump($controllerAndAction);
 echo "<br/>";
 echo "<br/>-> <br/>";
-echo explode("/", $matches[0]);
+var_dump( explode("/", $matches[0]));
+
+echo "<br/>";
+echo "<br/>";
 
 
 echo "-> Индивидуальная работа <br/>";
