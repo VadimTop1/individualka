@@ -46,7 +46,7 @@ $methodName = $controllerAndAction[1];      //метод
 //$controllerCreate = new $controllerName();
 //$controllerCreate::$methodName($matches); //(...matches)
 
-$controllerName::$methodName($matches[1]);
+$controllerName::$methodName($matches[0]);
 
 
 /*$obj_ControllerBD->CreteTable($obj_Table1);
