@@ -28,13 +28,13 @@ foreach ($routes as $pattern => $controllerAndAction) {
 echo "-> <br/>";
 var_dump($matches);
 echo "<br/>";
+var_dump($controllerAndAction);
 echo "<br/>";
 
 
 
 use WorkWithBD\ClassBD\Table1\Table1;
 use WorkWithBD\ControllerBD\ControllerBD;
-use src\Param\Param;
 
 echo "-> Индивидуальная работа <br/>";
 
