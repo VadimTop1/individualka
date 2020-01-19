@@ -36,8 +36,8 @@ echo "<br/>";
 echo "<br/>";
 
 
-$param = explode("/", $matches[0]);
-echo $param ;
+$param = explode("/", $matches[0])[1];
+echo $param;
 echo "<br/>";
 
 $controllerName = $controllerAndAction[0];  //класс
@@ -51,6 +51,7 @@ echo "<br/>";
 
 $controllerCreate = new $controllerName();
 $controllerCreate->$methodName($param); //(...matches)
+
 
 echo "<br/>";
 echo "<br/>";
