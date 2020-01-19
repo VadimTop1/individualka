@@ -12,10 +12,10 @@ class ControllerP1
                             Интерфейс приложения должен содержать  две html-страницы.<Br/> 
                             Первая выводит содержимое БД в виде таблицы, вторая содержит форму, позволяющую<Br/>
                             ввести данные в таблицу.";
-        $titleNameGroup = "Ученик группы ПИм-19";
+        $titleNameGroup =   "--> Ученик группы ПИм-19";
         $resParam = explode("/", $param[0])[1];
-        $Nameauthor = explode("_", $param[0]);
-        $titleNameauthor = $Nameauthor[0] . " " . $Nameauthor[1] . " " . $Nameauthor[2];
+        $Nameauthor = explode("_", $resParam);
+        $titleNameauthor =  "--> " . $Nameauthor[0] . " " . $Nameauthor[1] . " " . $Nameauthor[2];
 
         echo $titleNameWork."<br/>";
         echo $titleTheme."<br/>";
