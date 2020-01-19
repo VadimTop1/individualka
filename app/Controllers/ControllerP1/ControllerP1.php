@@ -34,7 +34,7 @@ class ControllerP1
                             Первая выводит содержимое БД в виде таблицы, вторая содержит форму, позволяющую<Br/>
                             ввести данные в таблицу.";
         $titleNameGroup =   "Ученик группы ПИм-19";
-        $resParam = explode("/", $param[0])[1];
+        $resParam = explode("/", $param)[1];
         $Nameauthor = explode("_", $resParam);
         $titleNameauthor =  $Nameauthor[0] . " " . $Nameauthor[1] . " " . $Nameauthor[2];
 
