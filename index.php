@@ -39,7 +39,15 @@ var_dump( explode("/", $matches[0]));
 echo "<br/>";
 echo "<br/>";
 
+$param = explode("/", $matches[0]);
+$controllerName = $controllerAndAction[0];  //класс
+$methodName = $controllerAndAction[1];      //метод
 
+$controllerCreate = new $controllerName();
+$controllerCreate->$methodName($param); //(...matches)
+
+echo "<br/>";
+echo "<br/>";
 echo "-> Индивидуальная работа <br/>";
 
 $host="ec2-174-129-33-107.compute-1.amazonaws.com";
