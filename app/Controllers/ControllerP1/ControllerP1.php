@@ -6,9 +6,13 @@ class ControllerP1
     static public function Main(array $_param)
     {
         self::TableInformation($_param);
+        echo "Работает";
     }
 
-    
+    static public function ControlPanel()
+    {
+        echo "";
+    }
 
     static public function TableInformation(array $param)
     {
