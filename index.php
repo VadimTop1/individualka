@@ -21,7 +21,8 @@ spl_autoload_register(function ($name)
 $route = $_GET['route'] ?? '';
 $routes = require __DIR__ . '/routes.php';
 
-echo "-> " . $routes;
+echo "-> <br/>";
+var_dump($routes);
 echo "<br/>";
 echo "<br/>";
 
