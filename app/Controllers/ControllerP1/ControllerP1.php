@@ -17,8 +17,8 @@ class ControllerP1
         echo $titleTable;
         echo '<tr><td><p><a href="https://individualkanext.herokuapp.com/page/addInfom">Меню добавления</a></p></td></tr>';
         echo '<tr><td><p><a href="https://individualkanext.herokuapp.com/page/showInfom">Вывод Информации</a></p></td></tr>';
-        echo '<tr><td><p><a href="https://individualkanext.herokuapp.com/page/showInfom">Очистить таблицу</a></p></td></tr>';
-        echo '<tr><td><p><a href="https://individualkanext.herokuapp.com/page/updateInfom">Главная</a></p></td></tr>';
+        echo '<tr><td><p><a href="https://individualkanext.herokuapp.com/page/updateInfom">Очистить таблицу</a></p></td></tr>';
+        echo '<tr><td><p><a href="https://individualkanext.herokuapp.com/page/">Главная</a></p></td></tr>';
         echo '</table>';
     }
 

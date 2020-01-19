@@ -66,6 +66,7 @@ class ControlerOutput
     {
         ControlerOutput::Connect();
         self::$obj_ControllerBD->CreteTable(self::$obj_Table1);
+        
         echo "Таблица была очищена!";
         ControllerP1::ControlPanel();
     }
