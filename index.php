@@ -30,6 +30,16 @@ foreach ($routes as $pattern => $controllerAndAction) {
 
 if (count($matches) == 0) {
     echo 'Страница не найдена!';
+
+    $titleTable =  '<br/><br/>
+    <table border="1">
+    <caption>Студены</caption>';
+    echo $titleTable;
+    echo '<tr><td><p><a href="https://individualkanext.herokuapp.com/">Волковский Вадим Сергеевич</a></p></td></tr>';
+    echo '<tr><td><p><a href="https://individualkanext.herokuapp.com/page/showInfom">Дмитрий Белкин</a></p></td></tr>';
+    echo '<tr><td><p><a href="https://individualkanext.herokuapp.com/page/showInfom">Максим Висягин Александрович</a></p></td></tr>';
+    echo '</table>';
+
     return;
 }
 

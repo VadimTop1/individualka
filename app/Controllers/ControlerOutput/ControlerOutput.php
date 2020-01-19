@@ -20,6 +20,16 @@ class ControlerOutput
         self::$obj_Table1 = new Table1;
     }
 
+    static public function Menu()
+    {
+        $titleTable =  '<br/><br/>
+        <table border="1">';
+        echo $titleTable;
+        echo '<tr><td><p><a href="https://individualkanext.herokuapp.com/">Главная</a></p></td></tr>';
+        echo '<tr><td><p><a href="https://individualkanext.herokuapp.com/page/showInfom">Вывод Информации</a></p></td></tr>';
+        echo '</table>';
+    }
+
     static public function Add()
     {
         ControlerOutput::Connect();
@@ -59,14 +69,7 @@ class ControlerOutput
                 echo "<br/><br/>-> Не удалось добавить ";
         }
 
-
-        $titleTable =  '<br/><br/>
-        <table border="1">';
-        echo $titleTable;
-        echo '<tr><td><p><a href="https://individualkanext.herokuapp.com/">главная</a></p></td></tr>';
-        echo '<tr><td><p><a href="https://individualkanext.herokuapp.com/page/showInfom">Вывод Информации</a></p></td></tr>';
-        echo '</table>';
-        
+        self::Menu();
     }
 
     static public function Show()
@@ -99,6 +102,8 @@ class ControlerOutput
             }
             echo '</table>';
         }
+
+        self::Menu();
     }
 }
 ?>
