@@ -27,7 +27,7 @@ $routeArr = [
 ];
 
 $route = $_GET['route'] ?? '';
-echo $route;
+echo "roye ->" . $route;
 echo "<br/>";
 echo "<br/>";
 
