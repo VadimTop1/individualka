@@ -46,10 +46,6 @@ $controllerCreate = new $controllerName();
 $controllerCreate->$methodName($matches); //(...matches)
 
 
-echo "<br/>";
-echo "<br/>";
-echo "-> Индивидуальная работа <br/>";
-
 $host="ec2-174-129-33-107.compute-1.amazonaws.com";
 $dbname="d2vsnkphe5a3oj";
 $user="rtokoowoircggm";
