@@ -35,20 +35,15 @@ var_dump($controllerAndAction);
 echo "<br/>";
 echo "<br/>";
 
+if (count($matches) == 0) {
+    echo 'Страница не найдена!';
+    return;
+}
+
 
 $param = explode("/", $matches[0])[1];
-echo $param;
-echo "<br/>";
-
 $controllerName = $controllerAndAction[0];  //класс
 $methodName = $controllerAndAction[1];      //метод
-
-echo "<br/>-> ". $controllerName;
-echo "<br/>-> ". $methodName;
-
-echo "<br/>";
-
-
 $controllerCreate = new $controllerName();
 $controllerCreate->$methodName($param); //(...matches)
 
