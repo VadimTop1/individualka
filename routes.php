@@ -5,7 +5,7 @@
     return [
         //'~^page/(.*)$~' => [ControllerP1::class, 'Main'],
         '~^page/Волковский_Вадим_Сергеевич$~' => [ControllerP1::class, 'Main'],
-        '~^page/addInfom$~' => [ControlerOutput::class, 'Add'],
-        '~^page/showInfom$~' => [ControlerOutput::class, 'Show']
+        '~^page/showInfom1$~' => [ControlerOutput::class, 'Add'],
+        '~^page/showInfom2$~' => [ControlerOutput::class, 'Show']
     ];
 ?>
