@@ -23,6 +23,7 @@ class ControllerP1
         $Nameauthor = explode("_", $resParam);
         $titleNameauthor =  $Nameauthor[0] . " " . $Nameauthor[1] . " " . $Nameauthor[2];
 
+        echo $titleTable;
         echo '<tr><td>'.$titleNameWork      ."</td></tr>";
         echo '<tr><td>'.$titleTheme         ."</td></tr>";
         echo '<tr><td>'.$titleTCondition    ."</td></tr>";
