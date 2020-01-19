@@ -1,8 +1,6 @@
 <?php
 namespace Controllers\ControllerP1;
 
-use Controllers\ControlerOutput\ControlerOutput;
-
 class ControllerP1
 {
     static public function Main(string $_param)
@@ -19,6 +17,8 @@ class ControllerP1
         echo $titleTable;
         echo '<tr><td><p><a href="https://individualkanext.herokuapp.com/page/addInfom">Меню добавления</a></p></td></tr>';
         echo '<tr><td><p><a href="https://individualkanext.herokuapp.com/page/showInfom">Вывод Информации</a></p></td></tr>';
+        echo '<tr><td><p><a href="https://individualkanext.herokuapp.com/page/showInfom">Очистить таблицу</a></p></td></tr>';
+        echo '<tr><td><p><a href="https://individualkanext.herokuapp.com/page/showInfom">Главная</a></p></td></tr>';
         echo '</table>';
     }
 

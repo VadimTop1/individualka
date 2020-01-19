@@ -33,7 +33,7 @@ if (count($matches) == 0) {
 
     $titleTable =  '<br/><br/>
     <table border="1">
-    <caption>Студены</caption>';
+    <caption>Страницы студентов</caption>';
     echo $titleTable;
     echo '<tr><td><p><a href="https://individualkanext.herokuapp.com/page/Волковский_Вадим_Сергеевич">Волковский Вадим Сергеевич</a></p></td></tr>';
     echo '<tr><td><p><a href="https://individualkanext.herokuapp.com/page/Дмитрий_Белкин_Геннадьиевич">Дмитрий Белкин Геннадьиевич</a></p></td></tr>';

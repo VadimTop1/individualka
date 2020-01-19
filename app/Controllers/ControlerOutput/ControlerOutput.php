@@ -3,6 +3,7 @@ namespace Controllers\ControlerOutput;
 
 use WorkWithBD\ClassBD\Table1\Table1;
 use WorkWithBD\ControllerBD\ControllerBD;
+use Controllers\ControllerP1\ControllerP1;
 
 class ControlerOutput
 {
@@ -18,16 +19,6 @@ class ControlerOutput
 
         self::$obj_ControllerBD = new ControllerBD($host,$dbname,$user,$password);
         self::$obj_Table1 = new Table1;
-    }
-
-    static public function Menu()
-    {
-        $titleTable =  '<br/><br/>
-        <table border="1">';
-        echo $titleTable;
-        echo '<tr><td><p><a href="https://individualkanext.herokuapp.com/">Главная</a></p></td></tr>';
-        echo '<tr><td><p><a href="https://individualkanext.herokuapp.com/page/showInfom">Вывод Информации</a></p></td></tr>';
-        echo '</table>';
     }
 
     static public function Add()
@@ -69,9 +60,15 @@ class ControlerOutput
                 echo "<br/><br/>-> Не удалось добавить ";
         }
 
-        self::Menu();
+        ControllerP1::ControlPanel();
     }
-
+    static public function Update()
+    {
+        ControlerOutput::Connect();
+        self::$obj_ControllerBD->CreteTable(self::$obj_Table1);
+        echo "Таблица была очищена!";
+        ControllerP1::ControlPanel();
+    }
     static public function Show()
     {
         ControlerOutput::Connect();
@@ -102,8 +99,8 @@ class ControlerOutput
             }
             echo '</table>';
         }
-
-        self::Menu();
+        ControllerP1::ControlPanel();
+        
     }
 }
 ?>

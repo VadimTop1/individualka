@@ -8,6 +8,7 @@
         '~^page/Дмитрий_Белкин_Геннадьиевич$~' => [ControllerP1::class, 'Main'],
         '~^page/Максим_Висягин_Александрович$~' => [ControllerP1::class, 'Main'],
         '~^page/addInfom$~' => [ControlerOutput::class, 'Add'],
-        '~^page/showInfom$~' => [ControlerOutput::class, 'Show']
+        '~^page/showInfom$~' => [ControlerOutput::class, 'Show'],
+        '~^page/updateInfom$~' => [ControlerOutput::class, 'Update']
     ];
 ?>
