@@ -17,6 +17,8 @@ spl_autoload_register(function ($name)
     require_once $className;
 });
 
+use WorkWithBD\ClassBD\Table1\Table1;
+use WorkWithBD\ControllerBD\ControllerBD;
 
 $route = $_GET['route'] ?? '';
 $routes = require __DIR__ . '/routes.php';
@@ -28,13 +30,12 @@ foreach ($routes as $pattern => $controllerAndAction) {
 echo "-> <br/>";
 var_dump($matches);
 echo "<br/>";
+echo "<br/>-> <br/>";
 var_dump($controllerAndAction);
 echo "<br/>";
+echo "<br/>-> <br/>";
+echo $pieces = explode("/", $matches[0]);
 
-
-
-use WorkWithBD\ClassBD\Table1\Table1;
-use WorkWithBD\ControllerBD\ControllerBD;
 
 echo "-> Индивидуальная работа <br/>";
 
