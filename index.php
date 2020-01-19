@@ -24,6 +24,8 @@ $routes = require __DIR__ . '/routes.php';
 
 foreach ($routes as $pattern => $controllerAndAction) {
     preg_match($pattern, $route, $matches);
+    if(count($matches) != 0)
+        break;
 }
 
 echo "-> <br/>";
