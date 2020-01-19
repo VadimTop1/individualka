@@ -1,27 +1,40 @@
 <?php
 namespace Controllers\ControllerP1;
 
+use WorkWithBD\ClassBD\Table1\Table1;
+use WorkWithBD\ControllerBD\ControllerBD;
+
 class ControllerP1
 {
     static public function Main(array $_param)
     {
         self::TableInformation($_param);
-        echo "Работает";
+        self::ControlPanel();
+        //echo "Работает";
     }
 
     static public function ControlPanel()
     {
-        echo "";
+        $host="ec2-174-129-33-107.compute-1.amazonaws.com";
+        $dbname="d2vsnkphe5a3oj";
+        $user="rtokoowoircggm";
+        $password="7b7b20b8a7e3719a92a0f789626bfcd89b12e39de5e69bef5e706717a99eab24";
+
+        $obj_ControllerBD = new ControllerBD($host,$dbname,$user,$password);
+        $obj_Table1 = new Table1;
+
+        $titleTable =  '<br/><br/>
+        <table border="1">';
+        echo $titleTable;
+        echo '<tr><td>'."</td><td>"."</td></tr>";
+        echo '<tr><td>'."</td><td>"."</td></tr>";
+        echo '</table>';
     }
 
-    static public function TableInformation(array $param)
+    static public function TableInformation(string $param)
     {
         $titleTable =  '<br/><br/>
-        <table border="1">
-          <tr>
-              <th></th>
-          </tr>
-          ';
+        <table border="1">';
         $titleNameWork =    "Индивидуальная работа";
         $titleTheme =       "Разработка облачного приложения, работающего с БД.";
         $titleTCondition =  "Разработать приложение, которое работает с базой данных, состоящей из одной таблицы<Br/>
