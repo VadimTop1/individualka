@@ -40,12 +40,10 @@ if (count($matches) == 0 || ($matches[1] == "" || $matches[1] == null)) {
     return;
 }
 
-
-$param = explode("/", $matches[0])[1];
 $controllerName = $controllerAndAction[0];  //класс
 $methodName = $controllerAndAction[1];      //метод
 $controllerCreate = new $controllerName();
-$controllerCreate->$methodName($param); //(...matches)
+$controllerCreate->$methodName(...$matches); //(...matches)
 
 
 echo "<br/>";
