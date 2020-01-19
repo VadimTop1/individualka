@@ -21,8 +21,12 @@ spl_autoload_register(function ($name)
 $route = $_GET['route'] ?? '';
 $routes = require __DIR__ . '/routes.php';
 
+foreach ($routes as $pattern => $controllerAndAction) {
+    preg_match($pattern, $route, $matches);
+}
+
 echo "-> <br/>";
-var_dump($routes);
+var_dump($matches);
 echo "<br/>";
 echo "<br/>";
 
