@@ -35,7 +35,7 @@ var_dump($controllerAndAction);
 echo "<br/>";
 echo "<br/>";
 
-if (count($matches) == 0 && ($matches[1] == "" || $matches[1] == null)) {
+if (count($matches) == 0 || ($matches[1] == "" || $matches[1] == null)) {
     echo 'Страница не найдена!';
     return;
 }
