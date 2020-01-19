@@ -43,7 +43,7 @@ if (count($matches) == 0 || ($matches[1] == "" || $matches[1] == null)) {
 $controllerName = $controllerAndAction[0];  //класс
 $methodName = $controllerAndAction[1];      //метод
 $controllerCreate = new $controllerName();
-$controllerCreate->$methodName(...$matches); //(...matches)
+$controllerCreate->$methodName($matches); //(...matches)
 
 
 echo "<br/>";
