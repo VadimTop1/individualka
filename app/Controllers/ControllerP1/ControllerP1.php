@@ -3,7 +3,14 @@ namespace Controllers\ControllerP1;
 
 class ControllerP1
 {
-    public function Show(array $param)
+    static public function Main(array $_param)
+    {
+        self::TableInformation($_param);
+    }
+
+    
+
+    static public function TableInformation(array $param)
     {
         $titleTable =  '<br/><br/>
         <table border="1">
