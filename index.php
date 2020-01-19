@@ -17,17 +17,11 @@ spl_autoload_register(function ($name)
     require_once $className;
 });
 
-$routeArr = [
-    //'~^Page/(.*)$~' => [\Project\Controllers\MainController::class, 'sayHello'],
-//'~^page/(.*)$~' => [\Project\Controllers\ControllerMain::class, 'distributeUrl'],
-    //'~^test$~' => 
-    //'~^users/authorization~' => [\Project\Controllers\ControllerMain::class, 'distributeUrl'],
-//'~^(.*)$~' => [\Project\Controllers\ControllerMain::class, 'distributeUrl']
-    //'~^authorization$~' => [\Project\Controllers\ControllerMain::class, 'distributeUrl']
-];
 
 $route = $_GET['route'] ?? '';
-echo "roye ->" . $route;
+$routes = require __DIR__ . '/routes.php';
+
+echo "-> " . $routes;
 echo "<br/>";
 echo "<br/>";
 
