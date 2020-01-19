@@ -18,8 +18,8 @@ class ControllerP1
         $titleTable =  '<br/><br/>
         <table border="1">';
         echo $titleTable;
-        echo '<tr><td><p><a href="https://individualkanext.herokuapp.com/page/">Меню добавления</a></p></td><td>'."</td></tr>";
-        echo '<tr><td>'."</td><td>"."</td></tr>";
+        echo '<tr><td><p><a href="https://individualkanext.herokuapp.com/page/addInfom">Меню добавления</a></p></td></tr>';
+        echo '<tr><td><p><a href="https://individualkanext.herokuapp.com/page/showInfom">Вывод Информации</a></p></td></tr>';
         echo '</table>';
     }
 
