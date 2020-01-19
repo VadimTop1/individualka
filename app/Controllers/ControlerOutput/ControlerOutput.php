@@ -22,6 +22,23 @@ class ControlerOutput
 
     static public function Add()
     {
+        ControlerOutput::Connect();
+
+        echo '
+        <form method="POST">
+            <p><b>Ваше Имя:</b><br>
+            <input type="text" name="firstName" size="30">
+            <p><b>Ваше Фамилия:</b><br>
+            <input type="text" name="secondName" size="30">
+            <p><b>Ваше Очество:</b><br>
+            <input type="text" name="thirdName" size="30">
+            <p><b>Сколько лет:</b><br>
+            <input type="text" name="age" size="3">
+            <br/><br/>
+            <input type="submit" value="Нажмите" />
+        </form>
+        ';
+
         if(self::$obj_ControllerBD == null)
             return ;
 
@@ -42,22 +59,6 @@ class ControlerOutput
                 echo "<br/><br/>-> Не удалось добавить ";
         }
 
-        ControlerOutput::Connect();
-
-        echo '
-        <form method="POST">
-            <p><b>Ваше Имя:</b><br>
-            <input type="text" name="firstName" size="30">
-            <p><b>Ваше Фамилия:</b><br>
-            <input type="text" name="secondName" size="30">
-            <p><b>Ваше Очество:</b><br>
-            <input type="text" name="thirdName" size="30">
-            <p><b>Сколько лет:</b><br>
-            <input type="text" name="age" size="3">
-            <br/><br/>
-            <input type="submit" value="Нажмите" />
-        </form>
-        ';
 
         $titleTable =  '<br/><br/>
         <table border="1">';
@@ -65,6 +66,7 @@ class ControlerOutput
         echo '<tr><td><p><a href="https://individualkanext.herokuapp.com/">главная</a></p></td></tr>';
         echo '<tr><td><p><a href="https://individualkanext.herokuapp.com/page/showInfom">Вывод Информации</a></p></td></tr>';
         echo '</table>';
+        
     }
 
     static public function Show()
