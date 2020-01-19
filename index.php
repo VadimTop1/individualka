@@ -45,8 +45,10 @@ $controllerName = $controllerAndAction[0];  //класс
 $methodName = $controllerAndAction[1];      //метод
 //$controllerCreate = new $controllerName();
 //$controllerCreate::$methodName($matches); //(...matches)
-
-$controllerName::$methodName($matches[0]);
+if($methodName == 'Main')
+    $controllerName::$methodName($matches[0]);
+else
+    $controllerName::$methodName();
 
 
 /*$obj_ControllerBD->CreteTable($obj_Table1);
