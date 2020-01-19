@@ -49,7 +49,7 @@ if($methodName == 'Main')
     $controllerName::$methodName($matches[0]);
 else
 {
-    echo "работает";
+    echo "работает / " .$controllerName." ".$methodName();
     $controllerName::$methodName();
 }
 
