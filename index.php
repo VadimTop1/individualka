@@ -45,6 +45,9 @@ $controllerName = $controllerAndAction[0];  //класс
 $methodName = $controllerAndAction[1];      //метод
 //$controllerCreate = new $controllerName();
 //$controllerCreate::$methodName($matches); //(...matches)
+echo "<br/>";
+echo "работает / " .$controllerName." ".$methodName();
+echo "<br/>";
 if($methodName == 'Main')
     $controllerName::$methodName($matches[0]);
 else
