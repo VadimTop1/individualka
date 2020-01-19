@@ -35,9 +35,9 @@ if (count($matches) == 0) {
     <table border="1">
     <caption>Студены</caption>';
     echo $titleTable;
-    echo '<tr><td><p><a href="https://individualkanext.herokuapp.com/">Волковский Вадим Сергеевич</a></p></td></tr>';
-    echo '<tr><td><p><a href="https://individualkanext.herokuapp.com/page/showInfom">Дмитрий Белкин</a></p></td></tr>';
-    echo '<tr><td><p><a href="https://individualkanext.herokuapp.com/page/showInfom">Максим Висягин Александрович</a></p></td></tr>';
+    echo '<tr><td><p><a href="https://individualkanext.herokuapp.com/page/Волковский_Вадим_Сергеевич">Волковский Вадим Сергеевич</a></p></td></tr>';
+    echo '<tr><td><p><a href="https://individualkanext.herokuapp.com/page/Дмитрий_Белкин_Геннадьиевич">Дмитрий Белкин Геннадьиевич</a></p></td></tr>';
+    echo '<tr><td><p><a href="https://individualkanext.herokuapp.com/page/Максим_Висягин_Александрович">Максим Висягин Александрович</a></p></td></tr>';
     echo '</table>';
 
     return;
