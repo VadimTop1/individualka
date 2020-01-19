@@ -22,7 +22,6 @@ class ControlerOutput
 
     static public function Add()
     {
-        ControlerOutput::Connect();
         if(self::$obj_ControllerBD == null)
             return ;
 
@@ -43,6 +42,8 @@ class ControlerOutput
                 echo "<br/><br/>-> Не удалось добавить ";
         }
 
+        ControlerOutput::Connect();
+
         echo '
         <form method="POST">
             <p><b>Ваше Имя:</b><br>
@@ -57,6 +58,13 @@ class ControlerOutput
             <input type="submit" value="Нажмите" />
         </form>
         ';
+
+        $titleTable =  '<br/><br/>
+        <table border="1">';
+        echo $titleTable;
+        echo '<tr><td><p><a href="https://individualkanext.herokuapp.com/">главная</a></p></td></tr>';
+        echo '<tr><td><p><a href="https://individualkanext.herokuapp.com/page/showInfom">Вывод Информации</a></p></td></tr>';
+        echo '</table>';
     }
 
     static public function Show()

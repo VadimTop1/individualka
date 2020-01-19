@@ -28,14 +28,6 @@ foreach ($routes as $pattern => $controllerAndAction) {
         break;
 }
 
-echo "-> <br/>";
-var_dump($matches);
-echo "<br/>";
-echo "<br/>-> <br/>";
-var_dump($controllerAndAction);
-echo "<br/>";
-echo "<br/>";
-
 if (count($matches) == 0) {
     echo 'Страница не найдена!';
     return;
@@ -45,16 +37,10 @@ $controllerName = $controllerAndAction[0];  //класс
 $methodName = $controllerAndAction[1];      //метод
 //$controllerCreate = new $controllerName();
 //$controllerCreate::$methodName($matches); //(...matches)
-echo "<br/>";
-echo "работает / " .$controllerName." ".$methodName;
-echo "<br/>";
 if($methodName == 'Main')
     $controllerName::$methodName($matches[0]);
 else
-{
-    echo "работает / " .$controllerName." ".$methodName;
     $controllerName::$methodName();
-}
 
 
 /*$obj_ControllerBD->CreteTable($obj_Table1);
