@@ -14,7 +14,6 @@ class ControllerP1
 
     static public function ControlPanel()
     {
-        ControlerOutput::Connect();
         $titleTable =  '<br/><br/>
         <table border="1">';
         echo $titleTable;
